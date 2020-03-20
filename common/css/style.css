@@ -125,12 +125,18 @@ a:hover {
   text-align: center;
 }
 
-.header-top-right-bottom li:last-child {
+/* .header-top-right-bottom li:last-child {
   background-color: red;
-}
+} */
 
 .header-top-right-bottom li:last-child a {
   color: #ffffff;
+  background-color: red;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 10px 0;
 }
 
 .grobal-nav ul {
@@ -188,6 +194,89 @@ a:hover {
 
 /* ======================== undergraduate ======================= */
 
+.undergraduate-top-page {
+  padding: 10% 0;
+  /* position: relative; */
+}
+
+.undergraduate-top-page  h2 {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.undergraduate-top-page ul {
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack:justify;
+  justify-content:space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  
+}
+
+.undergraduate-top-page ul li {
+  width: 48%;
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.undergraduate-top-page ul li figure img {
+  height: 450px;
+  object-fit: cover;
+}
+
+.undergraduate-top-page ul li .content {
+  position: absolute;
+  width: 70%;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%,-80%);
+  z-index: 1;
+  color: #000;
+  background-color: #fff;
+  opacity: 0.8;
+  /* font-size: 2rem; */
+  text-align: center;
+}
+
+/* .undergraduate-top-page .inner-item .phote {
+  background: url(https://placehold.jp/1000x500.png)
+  no-repeat center;
+  background-size: cover;
+
+  width: 50%;
+  height: 450px;
+  position: relative;
+}
+
+.undergraduate-top-page .inner-item .content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  height: 200px;
+  background-color: #fff;
+}
+
+.undergraduate-top-page .inner-item .text {
+  width: 420px;
+  margin: 0 auto;
+  
+} */
+
+
+
+
+
+
+
+
+
+
 .undergraduate section:last-child {
   margin-bottom: 170px;
 }
@@ -210,7 +299,7 @@ a:hover {
 .content-box-left dl dd {
   width: 40%;
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 40%;
   background-color: #fff;
   color: #333333;
@@ -245,13 +334,16 @@ a:hover {
 .content-box-right dl dd {
   width: 40%;
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 10%;
   background-color: #ffffff;
   color: #333333;
   padding: 80px;
   z-index: 1;
 }
+
+
+
 
 
 
