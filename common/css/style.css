@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* ========================= bese ======================== */
+/* ========================= beseここから ======================== */
 
 html {
   margin: 0;
@@ -21,6 +21,11 @@ body {
 }
 
 h2,h3,h4,h5 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
   margin: 0;
   padding: 0;
 }
@@ -59,11 +64,11 @@ a:hover {
 }
 
 
-/* ========================= base ======================== */
+/* ========================= baseここまで ======================== */
 
 
 
-/* ======================== header ======================= */
+/* ======================== headerここから ======================= */
 
 .header {
   width: 100%;
@@ -167,9 +172,9 @@ a:hover {
   padding: 28px 0;
 }
 
-/* ======================== header ======================= */
+/* ======================== headerここまで ======================= */
 
-/* ======================== mainvisual ======================= */
+/* ======================== mainvisualここから ======================= */
 
 .main-visual {
   position: relative;
@@ -190,9 +195,9 @@ a:hover {
   color: #ffffff;
 }
 
-/* ======================== mainvisual ======================= */
+/* ======================== mainvisualここまで ======================= */
 
-/* ======================== undergraduate ======================= */
+/* ======================== undergraduateここから ======================= */
 
 .undergraduate-top-page {
   padding: 10% 0;
@@ -240,35 +245,6 @@ a:hover {
   /* font-size: 2rem; */
   text-align: center;
 }
-
-/* .undergraduate-top-page .inner-item .phote {
-  background: url(https://placehold.jp/1000x500.png)
-  no-repeat center;
-  background-size: cover;
-
-  width: 50%;
-  height: 450px;
-  position: relative;
-}
-
-.undergraduate-top-page .inner-item .content {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 420px;
-  height: 200px;
-  background-color: #fff;
-}
-
-.undergraduate-top-page .inner-item .text {
-  width: 420px;
-  margin: 0 auto;
-  
-} */
-
-
 
 
 
@@ -351,4 +327,230 @@ main {
   background-color:skyblue;
 }
 
-/* ======================== undergraduate ======================= */
+/* ======================== undergraduateここまで ======================= */
+
+/* ======================== pickupここから======================= */
+
+.pickup h2 {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+
+
+/* sliderここから */
+
+.pickup {
+  max-width: 960px;
+  margin: 0 auto;
+  margin-bottom: 48px;
+  position: relative;
+}
+.pickup .item{
+  position: relative;
+  margin: 0 12px;
+}
+
+.pickup .pickup-slider .item-image {
+  margin: 0 10px;
+}
+
+.pickup .pickup-slider .item-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.pickup .item-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+  font-weight: bold;
+  line-height: 1.6;
+  background: #fff;
+  height: 45px;
+}
+
+.pickup .item-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.pickup .item:hover .item-link{
+  opacity: .3;
+}
+
+/* スライダー　矢印 */
+.slick-arrow{
+  position: absolute;
+  text-indent: -100vw;
+  top: 50%;
+  z-index: 1;
+  width: 48px;
+  height: 64px;
+  color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slick-arrow:hover,
+.slick-arrow:active{
+  opacity: .8;
+}
+
+.slick-prev{
+  left: 0px;
+  transform: translateY(-50%);
+  background-image: url(../../images/arrow_left.png);
+  background-size: 50%;
+  
+}
+.slick-next{
+  right: 0px;
+  transform: translateY(-50%) rotate(180deg);
+  background-image: url(../../images/arrow_left.png);
+  background-size: 50%;
+}
+
+@media screen and (min-width: 960px){
+
+  .pickup__slider{
+    width: calc(100% + 24px * 2);
+    transform: translateX(-24px);
+  }
+  .slick-prev{
+    transform: translate(-50%,-50%);
+  }
+  .slick-next{
+    transform: translate(50%,-50%) rotate(180deg);
+  }
+  .pickup .item{
+    margin: 0 24px;
+  }
+}
+
+
+/* sliderここまで */
+
+/* ======================== pickupここまで ======================= */
+
+/* ============= newsここから ===============*/
+
+.news {
+  padding: 120px;
+}
+
+.news .content-wrapper {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.news .news-heading {
+  width: 35%;
+}
+
+.news .news-content {
+  width: 65%;
+}
+
+.news .news-content table {
+  width: 100%;
+  margin: 0 0 25px 0;
+}
+
+.news .news-content th {
+  padding: 20px 2em 20px 0;
+  border-bottom: 1px dotted;
+}
+
+.news .news-content td {
+  border-bottom: 1px dotted;
+}
+
+.news .news-content tr:last-of-type th,
+.news .news-content tr:last-of-type td {
+  border-bottom: none;
+}
+
+.news .news-content .button a {
+  display: block;
+  font-size: 0.8rem;
+  color: #000;
+  border: 1px solid #000;
+  width: 200px;
+  line-height: 60px;
+  text-align: center;
+  margin: 0 0 0 auto;
+}
+
+.news .news-content .button a:hover {
+  background-color: #333;
+  color: #ffffff;
+  opacity: 1;
+}
+
+@media screen and (max-width: 1199px) {
+  .news {
+    padding: 50px 5vw;
+  }
+
+  .news .content-wrapper {
+    display: block;
+  }
+
+  .news .news-heading {
+    width: 100%;
+  }
+
+  .news .news-heading h2 {
+    text-align: center;
+    margin-bottom: 5vw;
+  }
+
+  .news .news-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .news {
+    padding: 50px 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .news .news-content .button a {
+    width: 35%;
+    min-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .news .news-content th {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1.25em 0 0 0;
+    border-bottom: 0;
+  }
+
+  .news .news-content td {
+    display: block;
+    width: 100%;
+  }
+}
+
+
+/* ============= newsここまで ===============*/
