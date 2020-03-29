@@ -34,6 +34,10 @@ p {
   padding: 0;
 }
 
+figure {
+margin: 0;
+}
+
 img {
   width: 100%;
   vertical-align: bottom;
@@ -62,8 +66,8 @@ a:hover {
 }
 
 .content-wrapper {
-  width: 95%;
-  max-width: 1400px;
+  width: 80%;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -85,6 +89,7 @@ a:hover {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  position: relative;
 
 }
 
@@ -132,20 +137,30 @@ a:hover {
 .header-sub-nav ul li {
   width: calc(100%/4);
   text-align: center;
+  margin: 10px 10px;
 }
 
 /* .header-sub-nav li:last-child {
   background-color: red;
 } */
 
-.header-sub-nav .li-material a {
-  color: #ffffff;
-  background-color: red;
+.header-sub-nav a {
+
   text-align: center;
   width: 100%;
   height: 100%;
   display: block;
   padding: 10px 0;
+}
+
+.header-sub-nav .li-material a {
+  color: #ffffff;
+  background-color: red;
+
+}
+
+.header-main-nav {
+background-color: green;
 }
 
 .header-main-nav ul {
@@ -166,15 +181,121 @@ a:hover {
   flex-grow: 1;
 }
 
+.header-main-nav ul li:hover {
+  background-color: #fff;
+}
+
+
 .header-main-nav ul li a {
   color: #ffffff;
-  background-color: #004c20;
+  background-color: green;
   text-align: center;
   width: 100%;
   height: 100%;
   display: block;
   padding: 28px 0;
 }
+
+/* .header-main-nav ul li a:hover {
+  background-color: green;
+  opacity: 0.6;
+} */
+
+@media screen and (max-width: 900px) {
+	
+	.header-top {
+		height: 70px;
+	}
+	
+	.hamburger {
+	display: block;
+	position: relative;
+	/*position: absolute;*/
+	/*right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 30px;
+	height: 26px;*/
+	cursor: pointer;
+	}
+	
+	.nav-button,
+	.nav-button span {
+	display: inline-block;
+	transition: all .4s;
+	}
+	
+	.nav-button {
+	/*position: relative;*/
+	position: absolute;
+	z-index: 9999;
+	top: -2px;
+	right: 0;
+	width: 70px;
+	height: 70px;
+	background-color: pink;
+	}
+	
+	.nav-button::after {
+		content: "MENU";
+		position: absolute;
+		bottom: 5px;
+		left: 22px;
+		font-size: 10px;
+		text-align: center;
+		color: blue;
+	}
+	
+	
+	.nav-button span {
+	position: absolute;
+	left: 0;
+	width: 25px;
+	height: 2px;
+	background-color: blue;
+	border-radius: 4px;
+	}
+	
+	.nav-button span:nth-of-type(1) {
+		top: 23px;
+		left: 25px;
+	}
+
+	.nav-button span:nth-of-type(2) {
+		top: 32px;
+		left: 25px;
+	}
+
+	.nav-button span:nth-of-type(3) {
+		top: 41px;
+		left: 25px;
+	}
+	
+	/*ボタンクリック時のアニメーション*/
+	.nav-button .active span:nth-of-type(1) {
+  		-webkit-transform: translateY(20px) rotate(-315deg);
+  		transform: translateY(20px) rotate(-315deg);
+	}
+	.nav-button .active span:nth-of-type(2) {
+  		opacity: 0;
+	}
+	.nav-button .active span:nth-of-type(3) {
+ 		 -webkit-transform: translateY(-20px) rotate(315deg);
+  		transform: translateY(-20px) rotate(315deg);
+	}
+	
+	
+	
+	
+	.header-top-right {
+	display: none;
+	}
+	
+	.header-main-nav {
+	display: none;
+	}
+}
+
 
 /* ======================== headerここまで ======================= */
 
@@ -208,6 +329,10 @@ a:hover {
   /* position: relative; */
 }
 
+/* .undergraduate-top-page .content-wrapper {
+width: 80%;
+} */
+
 .undergraduate-top-page  h2 {
   text-align: center;
   margin-bottom: 70px;
@@ -226,9 +351,12 @@ a:hover {
 }
 
 .undergraduate-top-page ul li {
-  width: 48%;
+  /*width: 48%;*/
+  width: calc(100%/2.1);
+  margin: 0 calc(100%/97.9);
   position: relative;
   padding-bottom: 30px;
+ /* float: left;*/
 }
 
 .undergraduate-top-page ul li figure img {
@@ -238,7 +366,7 @@ a:hover {
 
 .undergraduate-top-page ul li .content {
   position: absolute;
-  width: 70%;
+  width: 40%;
   top: 80%;
   left: 50%;
   transform: translate(-50%,-80%);
@@ -250,77 +378,16 @@ a:hover {
   text-align: center;
 }
 
-
-
-
-
-
-
-
-.undergraduate section:last-child {
-  margin-bottom: 170px;
+@media screen and (max-width: 767px) {
+		.undergraduate-top-page ul li {
+	width: 90%;
+	margin: 0 auto 20px auto;
+	}
 }
 
-.content-box-left {
-  margin-bottom: 200px;
-}
 
-.content-box-left dl {
-  width: 100%;
-  position: relative;
-}
 
-.content-box-left dl dt img {
-  width: 60%;
-  height: 450px;
-  object-fit: cover;
-}
 
-.content-box-left dl dd {
-  width: 40%;
-  position: absolute;
-  top: 40%;
-  left: 40%;
-  background-color: #fff;
-  color: #333333;
-  padding: 70px;
-  z-index: 1;
-}
-
-.content-box-right {
-  margin-bottom: 200px;
-}
-
-.content-box-right dl {
-  width: 100%;
-  position: relative;
-}
-
-.content-box-right dl dt img {
-  width: 60%;
-  height: 450px;
-  object-fit: cover;
-}
-
-.content-box-right dl dt {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.content-box-right dl dd {
-  width: 40%;
-  position: absolute;
-  top: 40%;
-  left: 10%;
-  background-color: #ffffff;
-  color: #333333;
-  padding: 80px;
-  z-index: 1;
-}
 
 
 
@@ -573,6 +640,10 @@ a:hover {
   align-items: center;
 }
 
+.inquiry .content-wrapper {
+  width: 60%;
+}
+
 .inquiry ul {
   display:-webkit-flex;
   display:-ms-flexbox;
@@ -603,6 +674,10 @@ a:hover {
 .inquiry li a:hover {
   background-color: ;
   color: ;
+}
+
+.inquiry .request {
+line-height: 80px;
 }
 
 @media screen and (max-width: 767px) {
@@ -642,7 +717,8 @@ a:hover {
 
 .footer .content-wrapper {
   padding-top: 50px;
-  max-width: 1100px;
+  /*max-width: 1500px;*/
+  width: 80%;
 }
 
 .footer .footer-high {
@@ -698,12 +774,20 @@ a:hover {
   display: flex;
 }
 
-.footer .footer-low .footer-sub-nav li a {
-  color: #333333;
-  padding: 0 25px;
+.footer .footer-low .footer-sub-nav li {
+margin: 0 10px;
+width: 150px;
 }
 
-
+.footer .footer-low .footer-sub-nav li a {
+  color: #333333;
+  padding: 0 10px;
+  border: 1px solid #333;
+  display: block;
+  font-size: 1.15rem;
+  text-align: center;
+  
+}
 
 .footer .content-wrapper p {
   color: #333333;
@@ -742,5 +826,100 @@ a:hover {
   }
 }
 
+/* トップへ戻るボタン */
+.button-top {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  font-size: 48px;
+  padding: 0 8px 48px 0;
+  color: #000;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform .5s, opacity .5s;
+}
+
+.button-top.active {
+  transform: translateY(0%);
+  opacity: 1;
+} 
+
+
 /* ============= footerここまで ===============*/
 
+
+/* ============= 学部紹介ページここから ===============*/
+
+.undergraduate section:last-child {
+  margin-bottom: 170px;
+}
+
+.content-box-left {
+  margin-bottom: 200px;
+}
+
+.content-box-left dl {
+  width: 100%;
+  position: relative;
+}
+
+.content-box-left dl dt img {
+  width: 60%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.content-box-left dl dd {
+  width: 40%;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  background-color: #fff;
+  opacity: 0.9;
+  color: #333333;
+  padding: 70px;
+  z-index: 1;
+}
+
+.content-box-right {
+  margin-bottom: 200px;
+}
+
+.content-box-right dl {
+  width: 100%;
+  position: relative;
+}
+
+.content-box-right dl dt img {
+  width: 60%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.content-box-right dl dt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.content-box-right dl dd {
+  width: 40%;
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  background-color: #ffffff;
+  opacity: 0.9;
+  color: #333333;
+  padding: 80px;
+  z-index: 1;
+}
+
+
+
+
+
+
+/* ============= 学部紹介ページここまで ===============*/

@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>○○大学</title>
   <link rel="stylesheet" href="common/css/nomalize.css">
   <link rel="stylesheet" href="common/css/style.css">
   <link rel="stylesheet" href="common/css/slick.css">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <script src="common/js/jquery-3.4.1.min.js"></script>
   <script src="common/js/slick.js"></script>
+  <!-- アクセスマップにスクロールで移動 -->
+  <script src="common/js/toMap.js"></script>
+  <!-- PICK UPのスライダー -->
   <script src="common/js/slider.js"></script>
+  <!-- トップにスクロールで戻るボタン -->
+  <script src="common/js/toTop.js"></script>
+  
 </head>
 <body>
   <header class="header">
@@ -21,6 +27,13 @@
             【ロゴ】○○大学
           </a>
         </div>
+        <section class="hamburger">
+        	<a href="#" class="nav-button">
+        		<span></span>
+        		<span></span>
+        		<span></span>
+        	</a>
+        </section>
         <div class="header-top-right">
           <div class="utility-nav">
             <div class="change-font-size">
@@ -175,6 +188,18 @@
                 </time></th>
                 <td>タイトルが入ります。タイトルが入ります</td>
               </tr>
+              <tr>
+                <th><time datetime="2020-00-00">
+                  2020.00.00
+                </time></th>
+                <td>タイトルが入ります。タイトルが入ります</td>
+              </tr>
+              <tr>
+                <th><time datetime="2020-00-00">
+                  2020.00.00
+                </time></th>
+                <td>タイトルが入ります。タイトルが入ります</td>
+              </tr>
               
             </tbody>
           </table>
@@ -183,14 +208,16 @@
       </section>
     </article>
     <article class="inquiry">
-      <ul>
-        <li class="contact"><a href="common/contact/index.html">
-          お問い合わせ<br>
+      <div class="content-wrapper">
+        <ul>
+          <li class="contact"><a href="common/contact/index.html">
+            お問い合わせ<br>
           <i class="fas fa-mobile-alt fa-fw"></i>012-3456-7890
-        </a></li>
+          </a></li>
 
-        <li class="request"><a href="common/request/index.html">資料請求</a></li>
-      </ul>
+          <li class="request"><a href="common/request/index.html">資料請求</a></li>
+        </ul>
+      </div>
     </article>
     <article id="access" class="access">
       <h2>アクセス</h2>
@@ -218,7 +245,7 @@
         </div>
         <nav class="footer-sub-nav">
           <ul>
-            <li><a href="">アクセス</a></li>
+            <li><a href="#access">アクセス</a></li>
             <li><a href="">お問い合わせ</a></li>
             <li><a href="">資料請求</a></li>
           </ul>
@@ -226,6 +253,8 @@
       </div>
       <p>&copy;○○ University. All Rights Reserved.</p>
     </section>
+    <!-- トップへ戻るボタン -->
+    <a href="#" class="button-top"><i class="fas fa-chevron-circle-up"></i></a>
   </footer>
 </body>
 </html>
