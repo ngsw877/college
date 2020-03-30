@@ -16,9 +16,11 @@
   <script src="common/js/slider.js"></script>
   <!-- トップにスクロールで戻るボタン -->
   <script src="common/js/toTop.js"></script>
+
+  <script src="common/js/changeFont.js"></script>
   
 </head>
-<body>
+<body class="home">
   <header class="header">
     <div class="content-wrapper">
       <div class="header-top">
@@ -37,7 +39,10 @@
         <div class="header-top-right">
           <div class="utility-nav">
             <div class="change-font-size">
-                文字サイズ　大　中　小！
+                文字サイズ：
+                <a href="#" id="big">大</a>
+                <a href="#" id="midium">中</a>
+                <a href="#" id="small">小</a>
             </div>
             <form>
               <div class="search">
@@ -51,9 +56,9 @@
               <li class="li-access">
                 <a href="#access"><i class="fas fa-car-alt"></i>  アクセス</a></li>
               <li class="li-contact">
-                <a href=""><i class="far fa-envelope"></i>  お問い合わせ</a></li>
+                <a href="common/contact/"><i class="far fa-envelope"></i>  お問い合わせ</a></li>
               <li class="li-material">
-                <a href=""><i class="far fa-file-alt"></i>  資料請求</a></li>
+                <a href="common/request/"><i class="far fa-file-alt"></i>  資料請求</a></li>
             </ul>
           </nav>
         </div>
@@ -246,8 +251,8 @@
         <nav class="footer-sub-nav">
           <ul>
             <li><a href="#access">アクセス</a></li>
-            <li><a href="">お問い合わせ</a></li>
-            <li><a href="">資料請求</a></li>
+            <li><a href="common/contact/">お問い合わせ</a></li>
+            <li><a href="common/request/">資料請求</a></li>
           </ul>
         </nav>
       </div>
