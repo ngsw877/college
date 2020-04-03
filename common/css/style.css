@@ -66,7 +66,7 @@ a:hover {
 }
 
 .content-wrapper {
-  width: 80%;
+  width: 85%;
   max-width: 1300px;
   margin: 0 auto;
 }
@@ -112,25 +112,37 @@ a:hover {
 
 .change-font-size a {
   display: inline-block;
-  background-color:blue;
+  background-color:#0086AB;
   color: #ffffff;
   width: 30px;
   height: 30px;
 	text-align: center;
-
 }
 
 .search {
-  background-color: lime;
+  background-color: #009F8C;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .search input:nth-child(1){
+  display: inline-block;
 	border: 1px solid gray;
-border-radius: 5px;
-background-color: whitesmoke;
-height: 32px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  height: 32px;
+  width: 200px;
+  font-size: 0.9rem;
 }
+
+.search input:nth-child(2) {
+  display: inline-block;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #40BFB0;
+}
+
 
 .utility-nav {
   display: -webkit-flex;
@@ -173,12 +185,13 @@ height: 32px;
 
 .header-sub-nav .li-material a {
   color: #ffffff;
-  background-color: red;
+  background-color: #C7243A;
+  border-radius: 4px;
 
 }
 
 .header-main-nav {
-background-color: #44A5CB;
+background-color: #009250;
 }
 
 .header-main-nav ul {
@@ -342,7 +355,7 @@ background-color: #44A5CB;
 /* ======================== undergraduateここから ======================= */
 
 .undergraduate-top-page {
-  padding: 10% 0;
+  margin: 5% 0;
   /* position: relative; */
 }
 
@@ -578,6 +591,7 @@ width: 80%;
   font-size: 0.8rem;
   color: #000;
   border: 1px solid #000;
+  border-radius: 5px;
   width: 200px;
   line-height: 60px;
   text-align: center;
@@ -677,19 +691,17 @@ width: 80%;
 
 .inquiry li {
   width: 250px;
-  /* height: 80px; */
-  /* margin: 0 50px; */
 }
 
 .inquiry li a {
   height: 80px;
   border: 1px solid #000;
+  border-radius: 5px;
   font-size: 1.25rem;
   color: #333;
   display: block;
   text-align: center;
-  /* padding: 1em 0; */
-  /* vertical-align: middle; */
+  
 }
 
 .inquiry li a:hover {
@@ -732,7 +744,8 @@ line-height: 80px;
 /* ============= footerここから ===============*/
 
 .footer {
-  background-color: skyblue;
+  background-color: #009250;
+  color: #ffffff;
 
 }
 
@@ -750,7 +763,7 @@ line-height: 80px;
   -ms-flex-pack:justify;
   justify-content:space-between;
   align-items: flex-end;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #fff;
 }
 
 .footer .footer-high h1 {
@@ -765,7 +778,7 @@ line-height: 80px;
 }
 
 .footer .footer-high li a {
-  color: #333333;
+  color: #fff;
   width: 100%;
   padding: 0 25px;
 }
@@ -801,9 +814,10 @@ width: 150px;
 }
 
 .footer .footer-low .footer-sub-nav li a {
-  color: #333333;
+  color: #fff;
   padding: 0 10px;
-  border: 1px solid #333;
+  border: 1px solid #fff;
+  border-radius: 5px;
   display: block;
   font-size: 1.15rem;
   text-align: center;
@@ -811,7 +825,7 @@ width: 150px;
 }
 
 .footer .content-wrapper p {
-  color: #333333;
+  /* color: #fff; */
   font-size: 0.75rem;
   text-align: center;
 }
