@@ -1204,5 +1204,70 @@ h2 {
   max-width: 320px;
 }
 
-/* ============= お問い合わせページここまで ===============*/
 
+/* お問い合わせ先 */
+
+.contact-information table {
+  margin: 30px auto;
+  width: 900px;
+}
+
+.contact-information caption {
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 30px;
+  padding: 10px 0;
+}
+
+.contact-information caption::before {
+  content: "";
+  width: 90px;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #196aab;
+  z-index: 1;
+}
+
+.contact-information caption::after {
+  content: "";
+  height: 4px;
+  width: 100%;
+  background-color: lime;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+}
+
+.contact-information thead tr th {
+  background: #e9727e;
+  border: solid 1px #ccc;
+  color: #fff;
+  padding: 10px;
+  width: calc(100%/3);
+}
+
+.contact-information tbody tr th {
+  border: solid 1px #ccc;
+}
+
+.contact-information tbody tr td a {
+  color: blue;
+  border-bottom: 1px dotted gray;
+}
+
+.contact-information td {
+  border: solid 1px #ccc;
+  padding: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .x-scroll {
+    overflow-x: auto;
+  }
+}
+/* ============= お問い合わせページここまで ===============*/
