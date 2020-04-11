@@ -120,7 +120,7 @@ a:hover {
 }
 
 .search {
-  background-color: #009F8C;
+  background-color: #40BFB0;
   padding: 10px;
   border-radius: 5px;
 }
@@ -140,7 +140,7 @@ a:hover {
   border: 1px solid #fff;
   border-radius: 5px;
   color: #ffffff;
-  background-color: #40BFB0;
+  background-color: #95DFD6;
 }
 
 
@@ -191,7 +191,7 @@ a:hover {
 }
 
 .header-main-nav {
-background-color: #009250;
+background-color: #009F8C;
 }
 
 .header-main-nav ul {
@@ -356,6 +356,7 @@ background-color: #009250;
 
 .undergraduate-top-page {
   margin: 5% 0;
+  background-color: #C8EFEA;
   /* position: relative; */
 }
 
@@ -434,21 +435,22 @@ width: 80%;
 
 /* ======================== pickupここから======================= */
 
+/* sliderここから */
+
+.pickup {
+  background-color: #ccc;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 48px;
+  position: relative;
+}
+
 .pickup h2 {
   text-align: center;
   margin-bottom: 70px;
 }
 
 
-
-/* sliderここから */
-
-.pickup {
-  max-width: 960px;
-  margin: 0 auto;
-  margin-bottom: 48px;
-  position: relative;
-}
 .pickup .item{
   position: relative;
   margin: 0;
@@ -807,7 +809,7 @@ line-height: 80px;
 /* ============= footerここから ===============*/
 
 .footer {
-  background-color: #009250;
+  background-color: #009F8C;
   color: #ffffff;
 
 }
