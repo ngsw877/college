@@ -374,9 +374,11 @@ width: 80%;
   display:-webkit-flex;
   display:-ms-flexbox;
   display: flex;
+
   -webkit-justify-content: space-between;
   -ms-flex-pack:justify;
   justify-content:space-between;
+
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   
@@ -489,7 +491,7 @@ width: 80%;
   opacity: .3;
 }
 
-/* スライダー　矢印 */
+/* スライダー  矢印 */
 .slick-arrow{
   position: absolute;
   text-indent: -100vw;
@@ -508,7 +510,7 @@ width: 80%;
 
 .slick-arrow:hover,
 .slick-arrow:active{
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .slick-prev{
@@ -1332,6 +1334,207 @@ width: 150px;
 
 
 /* ============= 学部紹介ページここまで ===============*/
+
+
+
+/* ============= キャンパスライフページここから ===============*/
+
+
+
+.campus-life {
+  padding-top: 48px;
+}
+
+.cl-inner {
+  padding: 48px 0;
+}
+
+.cl-content {
+  max-width: 960px;
+  margin: 0 12px;
+
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; 
+
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.cl-content .item {
+  width: calc(50% - 8px);
+  background-color: #fff;
+  margin-bottom: 32px;
+  position: relative;
+  display: none;
+}
+
+.cl-content .item figure img[alt="学生食堂"],
+.cl-content .item figure img[alt="国際交流・留学"] {
+  object-position: 50% 100%;
+}
+
+.cl-content .item a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.cl-content .item:hover a {
+  opacity: 0.3;
+}
+
+.cl-content .item.active {
+  display: block;
+}
+
+.cl-content .item-itle {
+  padding: 8px;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media screen and (min-width: 960px) {
+  .cl-content{
+    margin: 0 auto;
+  }
+  
+  .cl-content .item {
+    width: calc(320px - 16px);
+    background-color: whitesmoke;
+  }
+  
+  .cl-content .item:nth-child(3n + 1) {
+    margin-right: 16px;
+  }
+  
+  .cl-content .item:nth-child(3n + 2){
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+  
+  .cl-content .item:nth-child(3n) {
+    margin-left: 16px;
+  }
+  
+  .cl-content .item figure img {
+    height: 225px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .cl-content .item:nth-child(odd){
+    margin-right: 8px;
+  }
+  .cl-content .item:nth-child(even){
+    margin-left: 8px;
+  }
+
+  .cl-content .item figure img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .cl-content .item-itle {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+/* 一覧 ページネーション */
+.cl-pages {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.cl-pages li {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  margin-right: 16px;
+  cursor: pointer;
+
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display: flex;
+
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  
+}
+
+.cl-pages li:last-child {
+  margin-right: 0;
+}
+
+.cl-pages li.active {
+  background-color: #000;
+}
+
+.cl-pages li.active a {
+  color: #fff;
+}
+
+
+/* サークル・部活動ギャラリー
+------------------------------------------------ */
+
+.club-activity {
+  padding-top: 48px;
+}
+
+.ca-gallery {
+  padding: 48px 0;
+  background:pink;
+}
+
+.ca-carousel {
+  white-space: nowrap;
+  letter-spacing: -1em;
+}
+
+.ca-carousel-set {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.ca-carousel-set .item {
+  display: inline-block;
+  letter-spacing: normal;
+  width: 150px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.ca-carousel-set .item:hover {
+  transform: scale(2);
+}
+
+.ca-carousel-set .item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+
+
+/* ============= キャンパスライフページここまで ===============*/
 
 
 
