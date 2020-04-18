@@ -6,6 +6,7 @@ $(function(){
     slidesToScroll: 1, // 1枚ずつ
     autoplay: true,
     adaptiveHeight: true,
+    dots: true,
     responsive:[
       {
           breakpoint: 960,
