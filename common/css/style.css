@@ -72,6 +72,12 @@ a:hover {
 }
 
 
+.logo {
+  width: 320px;
+  height: 95px;
+  vertical-align: baseline;
+}
+
 /* ========================= baseここまで ======================== */
 
 
@@ -438,7 +444,7 @@ width: 80%;
 
 .pickup h2 {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 35px;
 }
 
 
@@ -504,6 +510,7 @@ width: 80%;
   outline: none;
   cursor: pointer;
   background-color: #fff;
+  border: 1px solid #99CFE5;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -556,17 +563,21 @@ width: 80%;
 
 .news {
   padding: 30px;
+  position: relative;
 }
 
-.news .content-wrapper {
-  /* display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; */
+.news::after{
+  content: "";
+  background-color: #f3f3f3;
+  height: 150%;
+  width: 40%;
+  position: absolute;
+  top: -10%;
+  left: 30%;
+  transform-origin: left top;
+  transform: skewX(-30deg);
+  z-index: -1;
 }
-
-/* .news .news-heading {
-  width: 30%;
-} */
 
 .news .news-content {
   width: 85%;
@@ -775,6 +786,20 @@ line-height: 80px;
 
 .access {
   margin-bottom: 35px;
+  position: relative;
+}
+
+.access::after {
+  content: "";
+  background-color: #f3f3f3;
+  height: 150%;
+  width: 40%;
+  position: absolute;
+  top: -10%;
+  left: 30%;
+  transform-origin: left top;
+  transform: skewX(30deg);
+  z-index: -1;
 }
 
 .access h2 {
@@ -863,10 +888,6 @@ line-height: 80px;
   border-bottom: 1px solid #fff;
 }
 
-.footer .footer-high h1 {
-  font-size: 1.5rem;
-}
-
 .footer .footer-high ul {
   display:-webkit-flex;
   display:-ms-flexbox;
@@ -892,8 +913,8 @@ line-height: 80px;
   opacity: 0.6;
 } */
 
-.footer .footer-low {
-  padding: 25px 0 80px 0;
+.footer .footer-middle {
+  padding: 25px 0 20px 0;
   display:-webkit-flex;
   display:-ms-flexbox;
   display: flex;
@@ -903,22 +924,22 @@ line-height: 80px;
   /* align-items: flex-end; */
 }
 
-.footer .footer-low .address span {
+.footer .footer-middle .address span {
   padding-left: 1em;
 }
 
-.footer .footer-low .footer-sub-nav ul {
+.footer .footer-middle .footer-sub-nav ul {
   display:-webkit-flex;
   display:-ms-flexbox;
   display: flex;
 }
 
-.footer .footer-low .footer-sub-nav li {
+.footer .footer-middle .footer-sub-nav li {
 margin: 0 10px;
 width: 150px;
 }
 
-.footer .footer-low .footer-sub-nav li a {
+.footer .footer-middle .footer-sub-nav li a {
   color: #fff;
   padding: 0 10px;
   /* border: 1px solid #fff; */
@@ -930,23 +951,37 @@ width: 150px;
   border: 1px solid #009F8C;
 }
 
-.footer .footer-low .footer-sub-nav li:last-child a {
+.footer .footer-middle .footer-sub-nav li:last-child a {
   background-color: #C7243A;
 }
 
-.footer .footer-low .footer-sub-nav li:nth-child(1) a:hover,
-.footer .footer-low .footer-sub-nav li:nth-child(2) a:hover {
+.footer .footer-middle .footer-sub-nav li:nth-child(1) a:hover,
+.footer .footer-middle .footer-sub-nav li:nth-child(2) a:hover {
   transition: all .6s ease;
   border: 1px solid #fff;
   opacity: 0.9;
 }
 
-.footer .footer-low .footer-sub-nav li:last-child a:hover {
+.footer .footer-middle .footer-sub-nav li:last-child a:hover {
   transition: all .6s ease;
   background-color: #fff;
   color:#C7243A;
   opacity: 1;
 }
+
+.footer .footer-low .sns-icon {
+  display: flex;
+}
+
+.footer .footer-low .sns-icon li {
+  margin-right: 40px;
+}
+
+.footer .footer-low .sns-icon a li i {
+  color: #fff;
+  font-size: 2rem;
+}
+
 
 .footer .content-wrapper p {
   /* color: #fff; */
@@ -966,7 +1001,7 @@ width: 150px;
   }
 
   .footer .footer-high h1,
-  .footer .footer-low .address {
+  .footer .footer-middle .address {
     text-align: center;  
   }
 
@@ -983,11 +1018,11 @@ width: 150px;
     /* font-size: 0.9rem; */
   }
 
-  .footer .footer-low  {
+  .footer .footer-middle  {
     display: block;
   }
 
-  .footer .footer-low ul {
+  .footer .footer-middle ul {
     padding-top: 30px;
   }
 
@@ -995,11 +1030,11 @@ width: 150px;
 
 @media screen and (max-width: 589px) {
   
-  .footer .footer-low .footer-sub-nav ul {
+  .footer .footer-middle .footer-sub-nav ul {
     display: block;
   }
 
-  .footer .footer-low .footer-sub-nav ul li {
+  .footer .footer-middle .footer-sub-nav ul li {
     margin: 20px auto;
   }
   
