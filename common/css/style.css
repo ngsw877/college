@@ -57,11 +57,11 @@ ul,li,dl,dt,dd {
 a {
   text-decoration: none;
   color: #333333;
-  transition: all .6s ease;
+  transition: all 0.6s ease;
 }
 
 a:hover {
-  transition: all .6s ease;
+  transition: all 0.6s ease;
   opacity: 0.6;
 }
 
@@ -501,7 +501,7 @@ width: 80%;
 }
 
 /* スライダー  矢印 */
-.slick-arrow{
+.slick-arrow {
   position: absolute;
   text-indent: -100vw;
   top: 65%;
@@ -521,16 +521,16 @@ width: 80%;
 .slick-arrow:hover,
 .slick-arrow:active{
   opacity: 0.8;
+  transition: all 0.6s ease;
 }
 
-.slick-prev{
+.slick-prev {
   left: 0px;
   transform: translateY(-50%);
   background-image: url(../../images/arrow_left.png);
   background-size: 50%;
-  
 }
-.slick-next{
+.slick-next {
   right: 0px;
   transform: translateY(-50%) rotate(180deg);
   background-image: url(../../images/arrow_left.png);
