@@ -17,14 +17,17 @@
   <script src="common/js/slider.js"></script>
   <!-- トップにスクロールで戻るボタン -->
   <script src="common/js/toTop.js"></script>
-
+  <!-- テキストの大きさ変更ボタン -->
   <script src="common/js/changeFont.js"></script>
+  <!-- スティッキーヘッダー -->
+  <script src="common/js/sticky.js"></script>
   
 </head>
 <body class="home">
-  <header class="header">
-    <div class="content-wrapper">
-      <div class="header-top">
+  <header id="header">
+    <!-- 通常のヘッダー -->
+    <div class="header">
+      <div class="header-top content-wrapper">
         <div class="header-top-left">
           <a href="#">
             <img class="logo" src="common/images/header-logo.png" alt="令和国際大学ロゴ">
@@ -64,7 +67,20 @@
           </nav>
         </div>
       </div>
-    </div>
+      <nav class="header-main-nav">
+        <div class="content-wrapper">
+          <ul>
+            <li><a href="about/index.html">大学案内</a></li>
+            <li><a href="undergraduate/index.html">学部紹介</a></li>
+            <li><a href="campuslife/index.html">キャンパスライフ</a></li>
+            <li><a href="career/index.html">キャリア・就職</a></li>
+            <li><a href="admissions/index.html">入試情報</a></li>
+          </ul>
+        </div>
+      </nav>
+  </div>
+  <!-- スティッキーヘッダー -->
+  <div class="sticky-header">
     <nav class="header-main-nav">
       <div class="content-wrapper">
         <ul>
@@ -76,6 +92,7 @@
         </ul>
       </div>
     </nav>
+  </div>
   </header>
   <main>
     <article class="main-visual">
@@ -125,9 +142,6 @@
         </ul>
       </section>
     </article>
-   
-
-    
     <article id="pickup" class="pickup">
       <h2>PICK UP</h2>
       <!-- slider -->
