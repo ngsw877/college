@@ -9,7 +9,7 @@ $(function(){
 
     //スティッキーヘッダーを画面外へ出して見えなくする
     // $stickyHeader.css({ top: '-' + stickyHeaderHeight + 'px' });
-    $stickyHeader.css({ top: '-9999px'}); //文字サイズ大ボタンを押すと、スティッキーヘッダーが見えてしまうバグ対策
+    $stickyHeader.css({ top: '-100px'}); //文字サイズ大ボタンを押すと、スティッキーヘッダーが見えてしまうバグ対策
 
     //ページの一番上からヘッダーの高さ分下方向にスクロールしたらtopを0に、それ以外の場合はスティッキーヘッダーを画面外へ出す
     $window.on('scroll', function(){
@@ -17,7 +17,7 @@ $(function(){
             $stickyHeader.css({top:0});
         } else {
             // $stickyHeader.css({ top: '-' + stickyHeaderHeight + 'px' });
-            $stickyHeader.css({ top: '-9999px' });
+            $stickyHeader.css({ top: '-100px' });
        }
     });
 

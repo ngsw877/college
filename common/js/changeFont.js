@@ -1,3 +1,5 @@
+//文字サイズ変更ボタン（大中小）
+
 window.addEventListener('load', function(){
   document.getElementById('big').addEventListener('click',function(){
     changeFont('120%', '35px');
@@ -25,7 +27,4 @@ function changeFont(fsize, bsize) {
     boxes[i].style.width = bsize;
     boxes[i].style.height = bsize;
   }
-
-
-  // fbox.style.witth = bsize;
 }
