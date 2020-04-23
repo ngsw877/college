@@ -282,7 +282,7 @@ background-color: #009F8C;
 	right: 0;
 	width: 70px;
 	height: 70px;
-	background-color: pink;
+	background-color: #016155;
 	}
 	
 	.nav-button::after {
@@ -292,7 +292,7 @@ background-color: #009F8C;
 		left: 22px;
 		font-size: 10px;
 		text-align: center;
-		color: blue;
+		color: #fff;
 	}
 	
 	
@@ -301,7 +301,7 @@ background-color: #009F8C;
 	left: 0;
 	width: 25px;
 	height: 2px;
-	background-color: blue;
+	background-color: #fff;
 	border-radius: 4px;
 	}
 	
@@ -607,12 +607,12 @@ width: 80%;
 
 .news::after {
   content: "";
-  background-color: #95dfd640;
+  background-color: #95dfd626;
   height: 100%;
-  width: 41%;
+  width: 40%;
   position: absolute;
   top: 0;
-  left: 71%;
+  left: 60%;
   transform-origin: left top;
   transform: skewX(-44deg);
   z-index: -1;
@@ -703,6 +703,13 @@ width: 80%;
   }
 }
 
+@media screen and (max-width: 640px) {
+  .news::after {
+    width: 50%;
+    transform: skewX(-17deg);
+  }
+}
+
 @media screen and (max-width: 479px) {
   .news .news-content th {
     display: block;
@@ -725,7 +732,7 @@ width: 80%;
 .inquiry {
   width: 100%;
   height: 500px;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   background-image: url(../../images/inquiry.jpg);
   background-size: cover;
   background-position: center center;
@@ -742,7 +749,6 @@ width: 80%;
 }
 
 .inquiry::after {
-  position: absolute;
   content: "";
   position: absolute;
   width: 100%;
@@ -750,11 +756,12 @@ width: 80%;
   background-color: rgba(0,0,0,0.3);
   top: 0;
   left: 0;
+  z-index: 1;
 }
 
-.inquiry .content-wrapper {
+/* .inquiry .content-wrapper {
   width: 60%;
-}
+} */
 
 .inquiry ul {
   display:-webkit-flex;
@@ -765,19 +772,33 @@ width: 80%;
   justify-content: space-around;
 
   width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-.inquiry li {
+.inquiry ul li {
   width: 250px;
-  z-index: 1;
+  position: absolute;
+  z-index: 2;
 }
 
-.inquiry li a {
+.inquiry ul li.contact {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15%;
+}
+
+.inquiry ul li.request {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15%;
+}
+
+
+.inquiry ul li a {
   height: 80px;
-  border: 1px solid #000;
   border-radius: 5px;
   font-size: 1.25rem;
-  color: #333;
   display: block;
   text-align: center;
 }
@@ -813,13 +834,36 @@ line-height: 80px;
 }
 
 @media screen and (max-width: 767px) {
+  .inquiry {
+    background-attachment: scroll;
+  }
+
   .inquiry ul {
     display: block;
+    position: relative;
   }
 
   .inquiry ul li {
-    margin: 50px auto;
+    /* margin: 50px auto; */
+    position: absolute;
+    z-index: 2;
   }
+
+  .inquiry ul li.contact {
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .inquiry ul li.request {
+    /* right: 0;
+    top: 0; */
+    
+    bottom: 20%; /*　←　topの値が優先されてbottomが効かない！*/
+    left: 50%; /*　←　rightの値よりleftが優先されているのでleftが効いている！*/
+    transform: translateX(-50%);
+  }
+
 
 }
 
@@ -829,20 +873,21 @@ line-height: 80px;
 /* ============= accessここから ===============*/
 
 .access {
+  padding-top: 50px;
   margin-bottom: 35px;
   position: relative;
 }
 
 .access::after {
   content: "";
-  background-color: #f3f3f3;
+  background-color: #95dfd626;
   height: 150%;
   width: 40%;
   position: absolute;
-  top: -10%;
-  left: 30%;
+  top: 0;
+  left: 0;
   transform-origin: left top;
-  transform: skewX(30deg);
+  transform: skewX(44deg);
   z-index: -1;
 }
 
@@ -858,7 +903,7 @@ line-height: 80px;
   margin: 60px auto 40px;
 } */
 
-.access.content-wrapper {
+.access .content-wrapper {
   max-width: 900px;
   width: 70%;
 }
@@ -866,8 +911,8 @@ line-height: 80px;
 .access-table {
   margin: 30px auto;
   width: 100%;
-  /* line-height: 1.5; */
 }
+
 .access-table th {
   background: #f3f6f8;
   border: solid 1px #ccc;
@@ -875,14 +920,21 @@ line-height: 80px;
   padding: 10px;
   /* width: 20%; */
 }
+
 .access-table td {
   border: solid 1px #ccc;
+  background-color: #fff;
   padding: 10px;
   /* width: 60%; */
 }
  
 @media screen and (max-width: 640px) {
-  .access.content-wrapper {
+  .access::after {
+    width: 50%;
+    transform: skewX(17deg);
+  }
+
+  .access .content-wrapper {
     width: 90%;
   }
 
