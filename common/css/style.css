@@ -469,8 +469,6 @@ width: 80%;
   margin: 0 auto;
   margin-bottom: 48px;
   position: relative;
-  /* pickup::beforeの矢印部分が画面外にはみ出すのを防ぐため */
-  overflow: hidden;
 }
 
 .pickup h2 {
@@ -597,6 +595,7 @@ width: 80%;
   padding: 30px;
   position: relative;
   border-top: 2px solid #009f8c99;
+  /* .news::afterが画面外にはみ出すのを防ぐため */
   overflow: hidden;
 }
 
@@ -883,6 +882,7 @@ line-height: 80px;
   padding-top: 50px;
   padding-bottom: 35px;
   position: relative;
+  /* .access::afterが画面外にはみ出すのを防ぐため */
   overflow: hidden;
 }
 

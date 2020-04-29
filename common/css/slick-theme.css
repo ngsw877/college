@@ -63,7 +63,7 @@
     opacity: .25;
 }
 
-.slick-prev:before,
+/* .slick-prev:before,
 .slick-next:before
 {
     font-family: 'slick';
@@ -75,7 +75,7 @@
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 .slick-prev
 {
@@ -86,10 +86,10 @@
     right: -25px;
     left: auto;
 }
-.slick-prev:before
+/* .slick-prev:before
 {
     content: '←';
-}
+} */
 [dir='rtl'] .slick-prev:before
 {
     content: '→';
