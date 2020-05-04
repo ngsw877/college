@@ -102,7 +102,7 @@ a:hover {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  position: relative;
+  /* position: relative; */
 
 }
 
@@ -110,7 +110,93 @@ a:hover {
   padding-top: 15px;
   flex-basis: 25%;
   max-width: 25%;
+  position: relative;
 }
+
+/* ハンバーガーメニューモダルここから */
+.menu-area {
+  display: none;
+  position: absolute;
+  background-color: #016155;
+  opacity: 0.9;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.menu-area a:hover {
+  opacity: 1;
+}
+
+.menu-area .header-sub-nav-modal {
+  display: flex;
+}
+
+.menu-area .header-sub-nav-modal li {
+  width: 33.33%;
+}
+
+.menu-area .header-sub-nav-modal li:nth-child(1) {
+  background-color: #007FB1;
+}
+
+.menu-area .header-sub-nav-modal li:nth-child(2) {
+  /* background-color: #F6CA06; */
+  background-color: #23AC0E;
+}
+
+.menu-area .header-sub-nav-modal li:nth-child(3) {
+  /* background-color: #C7243A; */
+  background-color: #F6CA06;
+}
+
+.menu-area .header-sub-nav-modal li a {
+  display: block;
+  width: 100%;
+  height: 75px;
+  line-height: 1;
+  font-size: 11px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.menu-area .header-sub-nav-modal li a i {
+  display: block;
+  font-size: 2rem;
+}
+
+.menu-area .header-sub-nav-modal li a span {
+  display: block;
+  margin-top: 5px;
+}
+
+.menu-area .header-main-nav-modal a {
+  display: block;
+  width: 100%;
+  padding: 15px 10px;
+  border-bottom: 1px solid #fff;
+  color: #ffffff;
+  position: relative;
+}
+
+.menu-area .header-main-nav-modal li:last-child a {
+  /* border-bottom: 1px solid #009F8C; */
+  border-bottom: 0;
+}
+
+.menu-area .header-main-nav-modal a::after {
+  position: absolute;
+  /* top: 1.5em; */
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  content: url(../../images/arrow_right.png);
+}
+
+/* ハンバーガーメニューモダルここまで */
 
 .header-top-right {
   padding-left: 40px;
@@ -156,7 +242,6 @@ a:hover {
   background-color: #95DFD6;
 }
 
-
 .utility-nav {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -170,7 +255,7 @@ a:hover {
   margin-bottom: 15px;
 }
 
-.header-sub-nav ul {
+.header-top-right .header-sub-nav ul {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex; 
@@ -184,14 +269,13 @@ a:hover {
   justify-content: flex-end;
 }
 
-.header-sub-nav ul li {
+.header-top-right .header-sub-nav ul li {
   width: calc(100%/4);
   text-align: center;
   margin: 10px 10px;
 }
 
-.header-sub-nav a {
-
+.header-top-right .header-sub-nav a {
   text-align: center;
   width: 100%;
   height: 100%;
@@ -199,7 +283,7 @@ a:hover {
   padding: 10px 0;
 }
 
-.header-sub-nav .li-material a {
+.header-top-right .header-sub-nav .li-material a {
   color: #ffffff;
   background-color: #C7243A;
   border-radius: 4px;
@@ -214,16 +298,14 @@ background-color: #009F8C;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex; 
+  
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  
-  
 }
 
 .header-main-nav ul li {
   padding: 0 ;
-  
   /* position: relative; */
   flex-grow: 1;
 }
@@ -243,6 +325,19 @@ background-color: #009F8C;
   opacity: 0.9;
 } 
 
+/* スティッキーヘッダー */
+.sticky-header {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  transition: 0.25s;
+}
+
+.sticky-header .header-main-nav ul li a {
+  padding: 7px 0;
+}
+
+
 @media screen and (max-width: 900px) {
   
 	.header .header-top {
@@ -260,16 +355,12 @@ background-color: #009F8C;
     height: 50px;
     width: 168.4px;
   }
-	
+  
+  /* ~~~~~~~ ハンバーガーメニューここから~~~~~~~ */
+  
 	.hamburger {
 	display: block;
 	position: relative;
-	/*position: absolute;*/
-	/*right: 10px;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 30px;
-	height: 26px;*/
 	cursor: pointer;
 	}
 	
@@ -286,7 +377,11 @@ background-color: #009F8C;
 	height: 70px;
 	background-color: #016155;
 	}
-	
+  
+  .nav-button:hover {
+    opacity: 0.9;
+  }
+
 	.nav-button::after {
 		content: "MENU";
 		position: absolute;
@@ -323,8 +418,8 @@ background-color: #009F8C;
 		left: 20px;
 	}
 	
-  /*ボタンクリック時のアニメーションここから*/
-  
+  /*ボタンクリック時のアニメーション*/
+
   .nav-button::before {
     position: absolute;
     top: 7%;
@@ -412,29 +507,14 @@ background-color: #009F8C;
       transform: rotate(-680deg);
     }
   }
-  
-  /*ボタンクリック時のアニメーションここまで*/
+  /* ~~~~~~~ ハンバーガーメニューここまで~~~~~~~ */
 
+  .header-top-right,
+  .header-main-nav,
+  .sticky-header {
+    display: none;
+  }
 
-	.header-top-right {
-	display: none;
-	}
-	
-	.header-main-nav {
-	display: none;
-	}
-}
-
-/* スティッキーヘッダー */
-.sticky-header {
-  position: fixed;
-  width: 100%;
-  z-index: 9999;
-  transition: 0.25s;
-}
-
-.sticky-header .header-main-nav ul li a {
-  padding: 7px 0;
 }
 
 
