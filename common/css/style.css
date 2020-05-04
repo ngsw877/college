@@ -183,8 +183,8 @@ a:hover {
 }
 
 .menu-area .header-main-nav-modal li:last-child a {
-  /* border-bottom: 1px solid #009F8C; */
-  border-bottom: 0;
+  border-bottom: 1px solid #009F8C;
+  /* border-bottom: 0; */
 }
 
 .menu-area .header-main-nav-modal a::after {
