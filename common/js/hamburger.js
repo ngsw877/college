@@ -20,7 +20,11 @@ $(function(){
   });
 
   // 重なりを避けるため、固定ヘッダー部の高さ分body要素を下に下げる
-  var height = $('.header-top').height();
-  $('body').css('margin-top', height);
+  var winW = $(window).width();
+  var divW = 900; //900px以下になると、ハンバーガーメニュー付ヘッダーに切り替わるため
+  if(winW <= divW){
+    var height = $('.header-top').height();
+    $('main').css('margin-top', height);
+  }
 
 });
