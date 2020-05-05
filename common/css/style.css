@@ -1430,7 +1430,9 @@ width: 150px;
 
 .strength h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
+  width: 50%;
+  border-bottom: 2px solid #009F8C;
 }
 
 .strength-nav {
@@ -1463,7 +1465,7 @@ width: 150px;
   -ms-flex-align: center;
   align-items: center;
 
-  background-color: #62cbf1;
+  background-color: #95DFD6;
   border-right: 1px solid #fff;
   cursor: pointer;
   font-size: 1.3rem;
@@ -1476,7 +1478,11 @@ width: 150px;
 
 .strength-nav li.active,
 .strength-nav li:hover {
-  background-color: #06afec;
+  background-color: #F9DB57;
+}
+
+.strength-nav li a:hover {
+  opacity: 1;
 }
 
 .strength-content {
@@ -1508,6 +1514,7 @@ width: 150px;
 
 .strength-content .item ul li p i {
   margin-right: 8px;
+  color: #009F8C;
 }
 
 @media screen and (max-width: 676px){
@@ -1618,7 +1625,7 @@ width: 150px;
 
 .about-content ul li a h3 {
   font-size: 1.1rem;
-  color: blue;
+  color: #007FB1;
   position: relative;
 }
 
@@ -1632,7 +1639,7 @@ width: 150px;
   height: 0;
   border-style: solid;
   border-width: 5px 0 5px 8px;
-  border-color: transparent transparent transparent blue;
+  border-color: transparent transparent transparent #007FB1;
 
 }
 
