@@ -1,4 +1,4 @@
-//文字サイズ変更ボタン（大中小）
+// テキストの文字サイズ変更ボタン（大中小）
 
 window.addEventListener('load', function(){
   document.getElementById('big').addEventListener('click',function(){

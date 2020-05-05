@@ -1,3 +1,5 @@
+// トップにスクロールで戻るボタン
+
 $(function(){
 
   var height = $(window).height();

@@ -183,7 +183,7 @@ a:hover {
 }
 
 .menu-area .header-main-nav-modal li:last-child a {
-  border-bottom: 1px solid #009F8C;
+  border-bottom: 1px solid rgba(1, 97, 85, 0.9);
   /* border-bottom: 0; */
 }
 
@@ -548,7 +548,7 @@ background-color: #009F8C;
 
 .undergraduate-top-page {
   margin: 50px 0;
-  background-color: #eafff4;
+  background-color:#eafff49c;
   padding: 30px 0;
   /* position: relative; */
 }

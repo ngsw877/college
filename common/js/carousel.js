@@ -1,4 +1,4 @@
-// 【キャンパスライフページ】サークル活動ギャラリー
+// 写真ギャラリーを無限ループ 
 
 $(function(){
 
@@ -34,7 +34,7 @@ $(function(){
       left--;
     }
     $carousel.css("transform", `translateX(${left}px)`);
-  }, 1);
+  }, 33);
 
   $carousel.on("mouseenter", function(){
     stop = true;

@@ -1,3 +1,5 @@
+// よくある質問に対する回答をアコーディオン表示
+
 $(function(){
   var dt = $(".qa-content dt");
   // console.log(dt);

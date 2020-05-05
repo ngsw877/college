@@ -10,17 +10,17 @@ $(function(){
 
       //ヘッダーからジャンプする場合
     if($(this).hasClass("to-map1")){
-      position -= $(".header-top").innerHeight() + $(".menu-area").innerHeight();
+      position -= $(".header-top").outerHeight() + $(".menu-area").outerHeight();
       //ハンバーガーメニューもしくは、ヘッダーからジャンプする場合
     } else {
         var winW = $(window).width();
         var divW = 900; //900px以下になると、ハンバーガーメニュー付ヘッダーに切り替わるため
         if(winW <= divW){
           //900px以下の場合
-          position -= $(".header-top").innerHeight();
+          position -= $(".header-top").outerHeight();
         } else {
           //900pxより大きい場合
-          position -= $(".sticky-header").innerHeight();
+          position -= $(".sticky-header").outerHeight();
         }
     }
 
