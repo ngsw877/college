@@ -79,6 +79,93 @@ a:hover {
   /* object-fit: cover; */
 }
 
+/* 下層ページのサブビジュアル */
+.subvisual {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 350px;
+  position: relative;
+}
+
+.subvisual .page-title {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  max-width: 775px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+}
+
+.subvisual h1 {
+  margin: 0;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  color: #333;
+  line-height: 120px;
+  font-weight: normal;
+  font-family: 游明朝, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", HGS明朝E, メイリオ, Meiryo, serif;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  .subvisual .page-title {
+    max-width: 85%;
+    width: 85%;
+  }
+}
+
+/* パンくずリスト */
+.breadcrumb {
+  background-color: #f2f2f2;
+  padding: 12px 0;
+}
+
+.breadcrumb ul {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.breadcrumb ul li {
+  font-size: 0.875rem;
+  display: inline;
+  position: relative;
+}
+
+.breadcrumb ul li:first-child {
+  padding-left: 20px;
+}
+
+.breadcrumb ul li:first-child::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-image: url(/common/images/home-icon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 0px;
+  top: -3px;
+}
+
+.breadcrumb ul li:not(:last-child):after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 9px;
+  background-image: url(/common/images/arrow-icon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 10px;
+}
+
+
 /* ========================= baseここまで ======================== */
 
 
@@ -1421,6 +1508,9 @@ width: 150px;
 
 /* ============= 大学案内ページここから ===============*/
 
+.subvisual.about-sv {
+  background-image: url(/about/images/about-subvisual.jpg);
+}
 
 /* ３つのテーマ
 ------------------------------------------------ */
@@ -1648,6 +1738,10 @@ width: 150px;
 
 /* ============= 学部紹介ページここから ===============*/
 
+.undergraduate-sv {
+  background-image: url(/undergraduate/images/undergraduate-subvisual.jpg);
+}
+
 .undergraduate {
   position: relative;
   /* background-color: #C9E8F1; */
@@ -1764,7 +1858,10 @@ width: 150px;
 
 /* ============= キャンパスライフページここから ===============*/
 
-
+.campus-life-sv {
+  background-image: url(/campuslife/images/campus-life-subvisual.jpg);
+  background-position: center 60%;
+}
 
 .campus-life {
   padding-top: 48px;
@@ -1933,6 +2030,7 @@ width: 150px;
 .ca-gallery {
   padding: 48px 0;
   background:pink;
+  overflow: hidden;
 }
 
 .ca-carousel {
@@ -1970,6 +2068,10 @@ width: 150px;
 
 
 /* ============= 就職・キャリア支援ページここから ===============*/
+
+.subvisual.career-sv {
+  background-image: url(/career/images/career-subvisual.jpg);
+}
 
 .career.content-wrapper {
   max-width: 1050px;
@@ -2050,18 +2152,39 @@ width: 150px;
 
 
 
-/* ============= お問い合わせページここから===============*/
+
+/* ================= 入試情報ページここまで ===================*/
+
+.subvisual.admissions-sv {
+  background-image: url(/admissions/images/admissions-sabvisual.jpg);
+}
+
+
+
+
+
+/* ================= 入試情報ページここまで ===================*/
+
+
+
+
+/* ================ お問い合わせページここから==================*/
 
 /* よくある質問
 ------------------------------------------------ */
 
+.subvisual.contact-sv {
+  background-image: url(/common/contact/images/contact-subvisual.jpg);
+}
+
 .qa h2 {
   text-align: center;
+  margin: 35px 0;
 }
 
 .qa-content {
   padding: 32px 12px;
-  background-color: #fb9db8;
+  background-color: #99cfe566;
 }
 
 .qa-content dt {
@@ -2167,8 +2290,12 @@ width: 150px;
 
 /* お問い合わせ先 */
 
+.contact-information {
+  margin-bottom: 150px;
+}
+
 .contact-information table {
-  margin: 30px auto;
+  margin: 50px auto;
   width: 900px;
 }
 
@@ -2188,7 +2315,7 @@ width: 150px;
   position: absolute;
   left: 0;
   bottom: 0;
-  background-color: #196aab;
+  background-color: #009F8C;
   z-index: 1;
 }
 
@@ -2196,17 +2323,20 @@ width: 150px;
   content: "";
   height: 4px;
   width: 100%;
-  background-color: lime;
+  background-color: #ccc;
   position: absolute;
   left: 0;
   bottom: 0;
 
 }
 
+.contact-information table th {
+  background-color: #f3f3f3;
+}
+
 .contact-information thead tr th {
-  background: #e9727e;
+  background: #ebf2f8;
   border: solid 1px #ccc;
-  color: #fff;
   padding: 10px;
   width: calc(100%/3);
 }
@@ -2216,7 +2346,7 @@ width: 150px;
 }
 
 .contact-information tbody tr td a {
-  color: blue;
+  color: #007FB1;
   border-bottom: 1px dotted gray;
 }
 
