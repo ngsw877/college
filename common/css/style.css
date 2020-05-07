@@ -1743,113 +1743,125 @@ width: 150px;
 }
 
 .undergraduate {
-  position: relative;
-  /* background-color: #C9E8F1; */
+  margin: 100px auto;
 }
 
-.undergraduate::before {
-  content: '';
-  background-color: #f4fff9;
-  position: absolute;
-  width: 112%;
-  height: 96%;
-  z-index: -1;
-  top: 3%;
-  left: -6%;
+.fadein {
+  opacity: 0;
+  transform: translate(0, 50px);
+  transition: all 1500ms;
 }
 
-.undergraduate section:last-child {
-  margin-bottom: 170px;
+.fadein.scrollin {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
-.content-box-left {
-  margin-bottom: 140px;
-}
-
-.content-box-left dl {
-  width: 100%;
-  position: relative;
-}
-
-.content-box-left dl dt img {
-  width: 60%;
+.ug-content {
   height: 450px;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
-.content-box-left dl dd {
-  width: 55%;
-  position: absolute;
-  top: 40%;
-  left: 40%;
-  background-color: #fff;
-  opacity: 0.9;
-  color: #333333;
-  padding: 30px;
-  z-index: 1;
-}
-
-.content-box-right {
-  margin-bottom: 140px;
-}
-
-.content-box-right dl {
-  width: 100%;
+  margin-bottom: 100px;
   position: relative;
 }
 
-.content-box-right dl dt img {
-  width: 60%;
-  height: 450px;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
-.content-box-right dl dt {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.content-box-right dl dd {
-  width: 55%;
+.ug-content::before {
+  content: "";
   position: absolute;
-  top: 40%;
-  left: 10%;
-  background-color: #fff;
-  opacity: 0.9;
-  color: #333333;
-  padding: 30px;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 380px;
 }
 
-@media screen and (max-width: 767px) {
+.ug-content.reverse::before {
+  left: initial;
+  right: 0;
+}
 
-  .undergraduate section {
-    margin-bottom: 70px;
+.ug-content::before {
+  background-size: cover;
+}
+
+.ug-content.no1::before {
+  background-image: url(/common/images/seiji_keizai.jpg);
+}
+
+.ug-content.no2::before {
+  background-image: url(/common/images/shogaku.jpg);
+}
+
+.ug-content.no3::before {
+  background-image: url(/common/images/rigaku.jpg);
+}
+
+.ug-content.no4::before {
+  background-image: url(/common/images/computer_science.jpg);
+}
+
+.ug-content .ug-text {
+  width: 50%;
+  margin-left: auto;
+  padding: 0 60px;
+  position: relative;
+  top: 3vw;
+}
+
+.ug-content.reverse .ug-text {
+  margin-left: 0;
+}
+
+.ug-content .ug-text h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  border-bottom: 3px solid #016155;
+}
+
+.ug-content .ug-text p {
+  margin-bottom: 20px;
+}
+
+.ug-content .ug-text .appering-img {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  ug-item {
+    width: 768px;
   }
+}
 
-  .undergraduate section dl dt img {
-    width: 100%;
-    height: 350px;
-  }
+@media (max-width: 767px) {
 
-  .undergraduate section dl dd {
-    width: 100%;
-    position: static;
-  }
-
-  /* .undergraduate section dl dd h2 {
+  .ug-content::before {
     display: none;
-  } */
+  }
+
+  .ug-content .ug-text {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .ug-content .ug-text h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .ug-content .ug-text p {
+    font-size: 0.9rem;
+  }
+
+  .ug-content .ug-text .appering-img {
+    display: block;
+  }
+  
+  .ug-content .ug-text .appering-img img {
+    height: 180px;
+    object-fit: cover;
+  }
 
 }
-
-
 
 
 /* ============= 学部紹介ページここまで ===============*/
