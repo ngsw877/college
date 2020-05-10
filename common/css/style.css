@@ -146,7 +146,7 @@ a:hover {
   content: "";
   width: 15px;
   height: 15px;
-  background-image: url(/common/images/home-icon.png);
+  background-image: url(../images/home-icon.png);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -159,7 +159,7 @@ a:hover {
   display: inline-block;
   width: 8px;
   height: 9px;
-  background-image: url(/common/images/arrow-icon.png);
+  background-image: url(../images/arrow-icon.png);
   background-size: contain;
   background-repeat: no-repeat;
   margin: 0 10px;
@@ -1509,7 +1509,7 @@ width: 150px;
 /* ============= 大学案内ページここから ===============*/
 
 .subvisual.about-sv {
-  background-image: url(/about/images/about-subvisual.jpg);
+  background-image: url(../../about/images/about-subvisual.jpg);
 }
 
 /* ３つのテーマ
@@ -1739,7 +1739,7 @@ width: 150px;
 /* ============= 学部紹介ページここから ===============*/
 
 .undergraduate-sv {
-  background-image: url(/undergraduate/images/undergraduate-subvisual.jpg);
+  background-image: url(../../undergraduate/images/undergraduate-subvisual.jpg);
 }
 
 .undergraduate {
@@ -1782,19 +1782,19 @@ width: 150px;
 }
 
 .ug-content.no1::before {
-  background-image: url(/common/images/seiji_keizai.jpg);
+  background-image: url(../images/seiji_keizai.jpg);
 }
 
 .ug-content.no2::before {
-  background-image: url(/common/images/shogaku.jpg);
+  background-image: url(../images/shogaku.jpg);
 }
 
 .ug-content.no3::before {
-  background-image: url(/common/images/rigaku.jpg);
+  background-image: url(../images/rigaku.jpg);
 }
 
 .ug-content.no4::before {
-  background-image: url(/common/images/computer_science.jpg);
+  background-image: url(../images/computer_science.jpg);
 }
 
 .ug-content .ug-text {
@@ -1871,7 +1871,7 @@ width: 150px;
 /* ============= キャンパスライフページここから ===============*/
 
 .campus-life-sv {
-  background-image: url(/campuslife/images/campus-life-subvisual.jpg);
+  background-image: url(../../campuslife/images/campus-life-subvisual.jpg);
   background-position: center 60%;
 }
 
@@ -2082,7 +2082,7 @@ width: 150px;
 /* ============= 就職・キャリア支援ページここから ===============*/
 
 .subvisual.career-sv {
-  background-image: url(/career/images/career-subvisual.jpg);
+  background-image: url(../../career/images/career-subvisual.jpg);
 }
 
 .career.content-wrapper {
@@ -2168,7 +2168,7 @@ width: 150px;
 /* ================= 入試情報ページここまで ===================*/
 
 .subvisual.admissions-sv {
-  background-image: url(/admissions/images/admissions-sabvisual.jpg);
+  background-image: url(../../admissions/images/admissions-sabvisual.jpg);
 }
 
 .admissions-information ul {
@@ -2207,7 +2207,7 @@ width: 150px;
 }
 
 .admissions-information .ai-title::before {
-  content: url(/admissions/images/arrow-icon.png);
+  content: url(../admissions/images/arrow-icon.png);
   position: absolute;
   top: 35px;
   left: 0;
@@ -2265,7 +2265,7 @@ width: 150px;
 ------------------------------------------------ */
 
 .subvisual.contact-sv {
-  background-image: url(/common/contact/images/contact-subvisual.jpg);
+  background-image: url(../contact/images/contact-subvisual.jpg);
 }
 
 .qa h2 {
