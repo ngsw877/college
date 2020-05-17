@@ -637,13 +637,7 @@ background-color: #009F8C;
   margin: 50px 0;
   background-color:#eafff49c;
   padding: 30px 0;
-  /* position: relative; */
 }
-
-/* .undergraduate-top-page .content-wrapper {
-width: 80%;
-} */
-
 .undergraduate-top-page  h2 {
   text-align: center;
   margin-bottom: 50px;
@@ -1118,7 +1112,7 @@ width: 80%;
 }
 
 .inquiry .request {
-line-height: 80px;
+ line-height: 80px;
 }
 
 @media screen and (max-width: 767px) {
@@ -2172,8 +2166,14 @@ width: 150px;
 }
 
 .admissions-information ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+
+  -ms-flex-pack: distribute;
   justify-content: space-around;
 
   margin: 100px 0;
@@ -2279,10 +2279,19 @@ width: 150px;
 }
 
 .qa-content dt {
-  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  
+  background-color: #fff;
   cursor: pointer;
   padding: 16px 16px 16px 30px;
   margin: 24px auto 0 auto;
@@ -2452,3 +2461,309 @@ width: 150px;
   }
 }
 /* ============= お問い合わせページここまで ===============*/
+
+
+
+/* =============== 資料請求ページここから ===============*/
+
+.request-header {
+  height: 80px;
+}
+
+.request-logo {
+  margin: 20px 10px;
+  height: 60px;
+}
+
+.request-logo .logo {
+  display: block;
+  height: 60px;
+  width: 202px;
+}
+
+
+
+.subvisual.request-sv {
+  background-image: url(../request/images/request-subvisual.jpg);
+}
+
+.form-wrapper.content-wrapper {
+  width: 80%;
+  max-width: 800px;
+}
+
+.step-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  max-width: 700px;
+  /* margin: 0 auto; */
+  margin: 80px auto;
+}
+
+.step-nav ul li {
+  height: 60px;
+  line-height: 60px;
+}
+
+.step-nav ul .step {
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #cdcdcd;
+}
+
+.step-nav ul .step.high-light {
+  background-color: #009F8C;
+  color: #ffffff;
+}
+
+.step-nav ul .arrow {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 0 15px;
+}
+
+.step-nav ul .arrow::before {
+  content: "";
+  background-image: url(../request/images/step-arrow-right.png);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  /* transform: translateY(-50%); */
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+}
+
+.form {
+  margin-bottom: 80px;
+}
+
+.form dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  border-left: 1px solid #cdcdcd;
+  border-right: 1px solid #cdcdcd;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+.form dl:first-child {
+  border: 1px solid #cdcdcd;
+}
+
+.form dl dt {
+  border-right: 1px solid #cdcdcd;
+  width: 30%;
+  padding: 30px 0 20px 20px;
+  line-height: 20px;
+  position: relative;;
+  background-color: #009f8c26;
+}
+
+.form dl dt.required::after {
+  content: "必須";
+  position: absolute;
+  background-color: #C7243A;
+  color: #fff;
+  display: inline-block;
+  padding: 1px 6px;
+  font-size: 13px;
+  border-radius: 3px;
+  width: 40px;
+  height: 20px;
+  right: 20px;
+}
+
+.form dl dd {
+  width: 70%;
+}
+
+.form dd input,
+.form dd select,
+.form dd textarea {
+  /* font-size: 1rem; */
+  border: 1px solid #cdcdcd;
+  background-color: #f5f5f5;
+}
+
+.form dd input[type="text"],
+/* .form dd input[type="number"], */
+.form dd input[type="tel"],
+.form dd input[type="email"],
+.form dd select {
+  line-height: 30px;
+  height: 30px;	
+  padding: 0 10px;
+}
+
+.form dl dd {
+  padding: 20px 10px 20px 20px;
+}
+
+.form dl dd input[type="checkbox"] {
+  margin-right: 7px;
+}
+
+.form dl dd input[type="radio"] {
+  margin-right: 7px;
+}
+
+.form dl.name dd p,
+.form dl.kana dd p {
+  display: inline-block
+}
+
+.form dd span {
+  margin-right: 10px
+}
+
+.form .address dd p {
+  margin-bottom: 20px;
+}
+
+.form .address dd p:last-child {
+  margin-bottom: 0;
+}
+
+.form .address .zip .hyphen {
+  margin-left: 10px;
+}
+
+.form .gender dd p {
+  display: inline-block;
+}
+
+.form .gender dd p:first-child {
+  margin-right: 20px;
+}
+
+.form-button {
+  width: 80%;
+  max-width: 600px;
+  margin: 30px auto;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.form-button button {
+  /* display: block; */
+  width: 200px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  margin: 30px 15px;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.form-button button[type="submit"] {
+  background-color: #009F8C;
+  border: 1px solid #009F8C;
+}
+
+.form-button button[type="reset"] {
+  background-color: #0086AB;
+  border: 1px solid #0086AB;
+}
+
+.form-button button[type="submit"]:hover {
+  background-color: transparent;
+  color: #009F8C;
+  transition: .3s ease all;
+}
+
+.form-button button:hover {
+  background-color: transparent;
+  color: #0086AB;
+  transition: .3s ease all;
+}
+
+.form .check-request {
+  margin-bottom: 80px;
+}
+
+.request-footer {
+  border-top: 3px solid #009f8c78;
+  padding-top: 30px;
+}
+
+.request-footer .rq-footer-low p {
+  background-color: #009F8C;
+  color: #ffffff;
+  text-align: center;
+}
+
+@media screen and (max-width: 970px) {
+  .step-nav ul {
+    display: block;
+    width: 60%;
+  }
+
+  .step-nav ul li.step {
+    width: 100%;
+    margin: 0;
+  }
+
+  .step-nav ul .arrow {
+    width: 100%;
+    height: 30px;
+    margin: 15px 0;
+  }
+
+  .step-nav ul .arrow::before {
+    background-image: url(../request/images/step-arrow-bottom.png);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .form-button {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form dl {
+    display: block;
+  }
+
+  .form dl dt {
+    border-right: 0;
+    border-bottom: 1px solid #cdcdcd;
+    width: 100%;
+  }
+
+  .form .address .zip span:first-child {
+    display: block;
+  }
+
+  .form-button {
+    display: block;
+    margin: 30px auto;
+    width: 200px;
+  }
+
+  .form-button button {
+    margin: 30px 0;
+  }
+
+  .request-footer .rq-footer-low p {
+    font-size: 0.8rem;
+  }
+}
+
+/* =============== 資料請求ページここまで ===============*/
+
