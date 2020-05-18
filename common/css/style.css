@@ -2604,7 +2604,7 @@ width: 150px;
 }
 
 .form dl dd {
-  padding: 20px 10px 20px 20px;
+  padding: 20px;
 }
 
 .form dl dd input[type="checkbox"] {
@@ -2634,6 +2634,10 @@ width: 150px;
 
 .form .address .zip .hyphen {
   margin-left: 10px;
+}
+
+.form .mail p:first-child {
+  margin-bottom: 20px;
 }
 
 .form .gender dd p {
@@ -2739,6 +2743,11 @@ width: 150px;
   .form dl {
     display: block;
   }
+  
+  .form dl dt,
+  .form dl dd {
+    width: 100%;
+  }
 
   .form dl dt {
     border-right: 0;
@@ -2746,8 +2755,23 @@ width: 150px;
     width: 100%;
   }
 
+  .form .name dd p,
+  .form .kana dd p {
+    width: 100%;
+  }
+
+  .form  input[type="text"],
+  .form  input[type="tel"],
+  .form  input[type="email"] {
+    width: 100%;
+  } 
+
   .form .address .zip span:first-child {
     display: block;
+  }
+
+  .form .address .zip input[type="text"] {
+    width: initial;
   }
 
   .form-button {

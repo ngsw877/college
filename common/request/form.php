@@ -24,7 +24,7 @@
     </section>
     <section class="breadcrumb">
       <ul>
-        <li><a href="../../index.html">トップページ</a></li>
+        <li><a href="../..z/index.html">トップページ</a></li>
         <li>資料請求</li>
       </ul>
     </section>
