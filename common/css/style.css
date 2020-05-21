@@ -2585,6 +2585,16 @@ width: 150px;
   width: 70%;
 }
 
+.form dl dd .content {
+  display: inline-block;
+}
+
+.form dl dd .error-message {
+  font-weight: bold;
+  color: #C7243A;
+  display: block;
+}
+
 .form dd input,
 .form dd select,
 .form dd textarea {
@@ -2596,7 +2606,6 @@ width: 150px;
 .form dd input[type="text"],
 /* .form dd input[type="number"], */
 .form dd input[type="tel"],
-.form dd input[type="email"],
 .form dd select {
   line-height: 30px;
   height: 30px;	
@@ -2624,11 +2633,15 @@ width: 150px;
   margin-right: 10px
 }
 
-.form .address dd p {
+.form .address dd div {
   margin-bottom: 20px;
 }
 
-.form .address dd p:last-child {
+.form .address dd .content {
+  margin-bottom: 0px;
+}
+
+.form .address dd div:last-child {
   margin-bottom: 0;
 }
 
@@ -2752,17 +2765,21 @@ width: 150px;
   .form dl dt {
     border-right: 0;
     border-bottom: 1px solid #cdcdcd;
-    width: 100%;
   }
 
-  .form .name dd p,
-  .form .kana dd p {
+  .form dl dd .content {
+    display: block
+  }
+
+  .form .name dd .content,
+  .form .name dd .content p,
+  .form .kana dd .content, 
+  .form .kana dd .content p {
     width: 100%;
   }
 
   .form  input[type="text"],
-  .form  input[type="tel"],
-  .form  input[type="email"] {
+  .form  input[type="tel"] {
     width: 100%;
   } 
 
