@@ -1,14 +1,19 @@
 <?php
+ini_set('display_errors',1); 
+
 
 $mode = !empty($_POST['mode']) ? $_POST['mode'] : '';
-// session_start();
+session_start();
 
 
 # 送信完了画面へのリンク
 $completion_page = "./thanks.html";
 
+# 確認画面から「送信」もしくは「戻る」をクリックした際の移動先
+$index = "./index.php";
+
 # 送信後画面からの戻り先
-$top_page = "./form.php";
+$top_page = "../../index.php";
 
 
 foreach($_POST as $key => $value) {
@@ -38,22 +43,31 @@ $phone = $_POST['phone'];
 $mail1 = $_POST['mail1'];
 $mail2 = $_POST['mail2'];
 $gender = $_POST['gender'];
-$grade = $_POST['grade'];
+$grade1 = $_POST['grade1'];
+$grade2 = ''; // value値を、日本語に変換した値を格納
 $school_name = $_POST['school-name'];
 
 # 選択された希望資料を配列として受け取り
-$documents = '';
+$documents[] = '';
 $documents_text = '';
-if(isset($_POST['documents']) && is_array($_POST['documents'])) {
+if(!empty($_POST['documents']) && is_array($_POST['documents'])) {
   $documents = $_POST['documents'];
+  foreach($documents as $key => $value) {
+    if($value == 0 ) {
+      $documents[$key] = '大学案内パンフレット';
+    }
+    if($value == 1 ) {
+      $documents[$key] = '大学院案内';
+    }
+    if($value == 2 ) {
+      $documents[$key] = ' 入試要項';
+    }
+    if($value == 3 ) {
+      $documents[$key] = '過去問題集';
+    }
+  }
   $documents_text = implode('<br>', $documents);
 }
-
-
-
-
-
-
 
 # エラーメッセージ
 $error_documents = '';
@@ -61,11 +75,9 @@ $error_name1 = '';
 $error_name2 = '';
 $error_kana1 = '';
 $error_kana2 = '';
-$error_zip1 = '';
-$error_zip2 = '';
-$error_pre = '';
-$error_addr1 = '';
-$error_addr2 = '';
+$error_zip = '';
+$error_pref = '';
+$error_addr = '';
 $error_phone = '';
 $error_mail1 = '';
 $error_mail2 = '';
@@ -74,141 +86,139 @@ $error_grade = '';
 $error_school_name = '';
 
 if($mode) {
-//   if (empty($_SESSION['token']) || $_SESSION['token'] != $_POST['token']) {
-//     die('不正な遷移です');
-//   }
-
-
-if(empty($documents)) {
-  $error_documents = '希望資料が選択されていません';
-}
-
-  if(empty($name1)) {
-    $error_name1 = '姓が未入力です';
+  if (empty($_SESSION['token']) || $_SESSION['token'] != $_POST['token']) {
+    die('不正な遷移です');
   }
 
-  if(empty($name2)) {
-    $error_name2 = '名が未入力です';
-  } 
-  
-  if(empty($kana1)) {
-    $error_kana1 = 'カナ姓が未入力です';
-  } else if(!preg_match("/^[ァ-ヶー]+$/u", $_POST['kana1'])) {
-    $error_kana1 = 'カタカナで入力してください';
-  } 
-
-  if(empty($kana2)) {
-    $error_kana2 = 'カナ名が未入力です';
-  } else if(!preg_match("/^[ァ-ヶー]+$/u", $_POST['kana2'])) {
-    $error_kana2 = 'カタカナで入力してください';
-  } 
-
-  if(empty($zip1) || empty($zip2)) {
-    $error_zip = '郵便番号が未入力です';
-  } else if
-      (!preg_match("/^[0-9]{3}/", $zip1) || 
-      !preg_match("/^[0-9]{4}/", $zip2)) {
-    $error_zip = '郵便番号を正しく入力してください';
-  } 
-
-  if(empty($pref)) {
-    $error_pref = '都道府県が未入力です';
-  } 
-
-  if(empty($addr1)) {
-    $error_addr = '市区町村番地が未入力です';
-  } 
-
-  if(empty($phone)) {
-    $error_phone = '電話番号が未入力です';
-  } else if(!preg_match("/^(0{1}[0-9]{9,10})$/", $phone)) {
-    $error_phone = '電話番号を正しく入力してください';
+  if(empty($documents)) {
+    $error_documents = '希望資料が選択されていません';
   }
 
-  if(empty($mail1)) {
-    $error_mail1 = 'メールアドレスが未入力です';
-  } else if(!preg_match("/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/", $mail1)) {
-    $error_mail1 = 'メールアドレスをを正しく入力してください';
+    if(empty($name1)) {
+      $error_name1 = '姓が未入力です';
+    }
+
+    if(empty($name2)) {
+      $error_name2 = '名が未入力です';
+    } 
+    
+    if(empty($kana1)) {
+      $error_kana1 = 'カナ姓が未入力です';
+    } else if(!preg_match("/^[ァ-ヶー]+$/u", $_POST['kana1'])) {
+      $error_kana1 = 'カタカナで入力してください';
+    } 
+
+    if(empty($kana2)) {
+      $error_kana2 = 'カナ名が未入力です';
+    } else if(!preg_match("/^[ァ-ヶー]+$/u", $_POST['kana2'])) {
+      $error_kana2 = 'カタカナで入力してください';
+    } 
+
+    if(empty($zip1) || empty($zip2)) {
+      $error_zip = '郵便番号が未入力です';
+    } else if
+        (!preg_match("/^[0-9]{3}/", $zip1) || 
+        !preg_match("/^[0-9]{4}/", $zip2)) {
+      $error_zip = '郵便番号を正しく入力してください';
+    } 
+
+    if(empty($pref)) {
+      $error_pref = '都道府県が未入力です';
+    } 
+
+    if(empty($addr1)) {
+      $error_addr = '市区町村番地が未入力です';
+    } 
+
+    if(empty($phone)) {
+      $error_phone = '電話番号が未入力です';
+    } else if(!preg_match("/^(0{1}[0-9]{9,10})$/", $phone)) {
+      $error_phone = '電話番号を正しく入力してください';
+    }
+
+    if(empty($mail1)) {
+      $error_mail1 = 'メールアドレスが未入力です';
+    } else if(!preg_match("/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/", $mail1)) {
+      $error_mail1 = 'メールアドレスをを正しく入力してください';
+    }
+
+    if(empty($mail2)) {
+      $error_mail2 = 'メールアドレスが未入力です';
+    } else if($mail1 != $mail2) {
+      $error_mail2 = 'メールアドレスが一致していません';
+    } else if(!preg_match("/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/", $mail2)) {
+      $error_mail2 = 'メールアドレスをを正しく入力してください';
+    }
+
+  if(isset($gender)) {
+    if($gender == 'male') {
+      $gender = '男性';
+    } else {
+      $gender = '女性';
+    }
   }
 
-  if(empty($mail2)) {
-    $error_mail2 = 'メールアドレスが未入力です';
-  } else if($mail1 != $mail2) {
-    $error_mail2 = 'メールアドレスが一致していません';
-  } else if(!preg_match("/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/", $mail2)) {
-    $error_mail2 = 'メールアドレスをを正しく入力してください';
-  }
-
-if(isset($gender)) {
-  if($gender == 'male') {
-    $gender = '男性';
+  if(empty($grade1) || $grade1 == 0) {
+    $error_grade = '学年が未入力です';
   } else {
-    $gender = '女性';
+      switch ($grade1) {
+        case 1:
+          $grade2 = '高校生3年生';
+        break;
+        case 2:
+          $grade2 = '高校生2年生';
+        break;
+        case 3:
+          $grade2 = '高校生1年生';
+        break;
+        case 4:
+          $grade2 = '高専生';
+        break;
+        case 5:
+          $grade2 = '予備校生・浪人生';
+        break;
+        case 6:
+          $grade2 = '大学生';
+        break;
+        case 7:
+          $grade2 = '短大生';
+        break;
+        case 8:
+          $grade2 = '大学院生';
+        break;
+        case 9:
+          $grade2 = '専門学校生';
+        break;
+        case 10:
+          $grade2 = '中学生';
+        break;
+        case 11:
+          $grade2 = '外国人留学生';
+        break;
+        case 12:
+          $grade2 = '社会人';
+        break;
+        case 13:
+          $grade2 = '教育関係';
+        break;
+        case 14:
+          $grade2 = '保護者';
+        break;
+        case 15:
+          $grade2 = 'その他';
+        break;
+    }
   }
-}
 
-if(empty($grade) || $grade == 0) {
-  $error_grade = '学年が未入力です';
-} else {
-  switch ($grade) {
-    case 1:
-      $grade = '高校生3年生';
-    break;
-    case 2:
-      $grade = '高校生2年生';
-    break;
-    case 3:
-      $grade = '高校生1年生';
-    break;
-    case 4:
-      $grade = '高専生';
-    break;
-    case 5:
-      $grade = '予備校生・浪人生';
-    break;
-    case 6:
-      $grade = '大学生';
-    break;
-    case 7:
-      $grade = '短大生';
-    break;
-    case 8:
-      $grade = '大学院生';
-    break;
-    case 9:
-      $grade = '専門学校生';
-    break;
-    case 10:
-      $grade = '中学生';
-    break;
-    case 11:
-      $grade = '外国人留学生';
-    break;
-    case 12:
-      $grade = '社会人';
-    break;
-    case 13:
-      $grade = '教育関係';
-    break;
-    case 14:
-      $grade = '保護者';
-    break;
-    case 15:
-      $grade = 'その他';
-    break;
-  }
-}
-
-  # 入力内容にエラーがあれば、再度inputモードへ
+  # 入力内容にエラーがあれば、再度inputモードへ #
   if (
       $error_documents ||
       $error_name1 ||
       $error_name2 ||
       $error_kana1 ||
       $error_kana2 ||
-      $error_zip1 ||
-      $error_zip2 ||
-      $error_pre ||
+      $error_zip ||
+      $error_pref ||
       $error_addr ||
       $error_phone ||
       $error_mail1 ||
@@ -220,11 +230,18 @@ if(empty($grade) || $grade == 0) {
           $mode = 'input';
         }
 
+  # 確認画面から、送信完了画面に移動 #
+  if($mode == 'submit') {
+    session_destroy();
+    ## ※ここにメール送信処理を実装予定 ##
+    header('Location:' . $completion_page);
+    exit;
+  }
+
 } else {
   $mode = 'input';
-  
+  $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(16));
 }
-
 
 ?>
 
@@ -242,8 +259,6 @@ if(empty($grade) || $grade == 0) {
 
 <?php  
 var_dump($_POST); 
-
-
 
 
 ?>
@@ -272,12 +287,11 @@ var_dump($_POST);
 
 <!--
 #===========================================================
-#  フォーム入力モード
+#  フォーム'入力画面'モード
 #=========================================================== 
 -->
 
     <?php if($mode == 'input'):  ?>
-
 
       <section class="form-wrapper content-wrapper">
         <section class="step-nav">
@@ -290,9 +304,9 @@ var_dump($_POST);
           </ul>
         </section>
 
-        <form action="index.php" method="POST" class="form">
+        <form action="index.php"  method="POST" class="form">
           <input type="hidden" name="mode" value="confirm">
-          <!-- <input type="hidden" name="token" value="confirm"> -->
+          <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
           
           <div class="check-request">
             <dl>
@@ -308,29 +322,29 @@ var_dump($_POST);
                 <ul>
                   <li>
                     <label>
-                      <input type="checkbox" name="documents[]" value="0" 
-                      <?php if(isset($documents[0])) {echo 'checked';} ?> >
+                      <input type="checkbox" name="documents[0]" value="0" 
+                      <?php if(!empty($documents[0])) {echo 'checked';} ?> >
                       大学案内パンフレット
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="checkbox" name="documents[]" value="1" 
-                      <?php if(isset($documents[1])) {echo 'checked';} ?> >
+                      <input type="checkbox" name="documents[1]" value="1" 
+                      <?php if(!empty($documents[1])) {echo 'checked';} ?> >
                       入試要項
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="checkbox" name="documents[]" value="2" 
-                      <?php if(isset($documents[2])) {echo 'checked';} ?> >
+                      <input type="checkbox" name="documents[2]" value="2" 
+                      <?php if(!empty($documents[2])) {echo 'checked';} ?> >
                       入試要項
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="checkbox" name="documents[]" value="3" 
-                      <?php if(isset($documents[3])) {echo 'checked';} ?> >
+                      <input type="checkbox" name="documents[3]" value="3" 
+                      <?php if(!empty($documents[3])) {echo 'checked';} ?> >
                       過去問題集
                     </label>
                   </li>
@@ -369,7 +383,7 @@ var_dump($_POST);
                   <p>
                     <label>
                       <span>名</span>
-                      <input type="text" name="name2" value="<?php echo $name2; ?>">
+                      <input  class="name2" type="text" name="name2" value="<?php echo $name2; ?>">
                     </label>
                   </p>
                 </dd>
@@ -430,7 +444,7 @@ var_dump($_POST);
                 <div>
                   <div class="pref">
                     <!-- エラーメッセージ -->
-                    <?php if($error_zip): ?>
+                    <?php if($error_pref): ?>
                       <span class="error-message">
                         <?php echo $error_pref; ?>
                       </span>
@@ -530,66 +544,66 @@ var_dump($_POST);
                   </span>
                 <?php endif; ?>
                 <!-- ---------------- -->
-                <select name="grade">
+                <select name="grade1">
                   <option value="0" selected>選択してください</option>
                   <option value="1" 
-                  <?php if($grade == '高校生3年生') {echo 'selected';} ?>>
+                  <?php if($grade2 == '高校生3年生') {echo 'selected';} ?>>
                   高校生3年生
                   </option>
                   <option value="2" 
-                  <?php if($grade == '高校生2年生') {echo 'selected';} ?>>
+                  <?php if($grade2 == '高校生2年生') {echo 'selected';} ?>>
                   高校生2年生
                   </option>
                   <option value="3" 
-                  <?php if($grade == '高校生1年生') {echo 'selected';} ?>>
+                  <?php if($grade2 == '高校生1年生') {echo 'selected';} ?>>
                   高校生1年生
                   </option>
                   <option value="4" 
-                  <?php if($grade == '高専生') {echo 'selected';} ?>>
+                  <?php if($grade2 == '高専生') {echo 'selected';} ?>>
                   高専生
                   </option>
                   <option value="5" 
-                  <?php if($grade == '予備校生・浪人生') {echo 'selected';} ?>>
+                  <?php if($grade2 == '予備校生・浪人生') {echo 'selected';} ?>>
                   予備校生・浪人生
                   </option>
                   <option value="6" 
-                  <?php if($grade == '大学生') {echo 'selected';} ?>>
+                  <?php if($grade2 == '大学生') {echo 'selected';} ?>>
                   大学生
                   </option>
                   <option value="7" 
-                  <?php if($grade == '短大生') {echo 'selected';} ?>>
+                  <?php if($grade2 == '短大生') {echo 'selected';} ?>>
                   短大生
                   </option>
                   <option value="8" 
-                  <?php if($grade == '大学院生') {echo 'selected';} ?>>
+                  <?php if($grade2 == '大学院生') {echo 'selected';} ?>>
                   大学院生
                   </option>
                   <option value="9" 
-                  <?php if($grade == '専門学校生') {echo 'selected';} ?>>
+                  <?php if($grade2 == '専門学校生') {echo 'selected';} ?>>
                   専門学校生
                   </option>
                   <option value="10" 
-                  <?php if($grade == '中学生') {echo 'selected';} ?>>
+                  <?php if($grade2 == '中学生') {echo 'selected';} ?>>
                   中学生
                   </option>
                   <option value="11" 
-                  <?php if($grade == '外国人留学生') {echo 'selected';} ?>>
+                  <?php if($grade2 == '外国人留学生') {echo 'selected';} ?>>
                   外国人留学生
                   </option>
                   <option value="12" 
-                  <?php if($grade == '社会人') {echo 'selected';} ?>>
+                  <?php if($grade2 == '社会人') {echo 'selected';} ?>>
                   社会人
                   </option>
                   <option value="13" 
-                  <?php if($grade == '教育関係') {echo 'selected';} ?>>
+                  <?php if($grade2 == '教育関係') {echo 'selected';} ?>>
                   教育関係
                   </option>
                   <option value="14" 
-                  <?php if($grade == '保護者') {echo 'selected';} ?>>
+                  <?php if($grade2 == '保護者') {echo 'selected';} ?>>
                   保護者
                   </option>
                   <option value="15" 
-                  <?php if($grade == 'その他') {echo 'selected';} ?>>
+                  <?php if($grade2 == 'その他') {echo 'selected';} ?>>
                   その他
                   </option>
                 </select>
@@ -601,15 +615,206 @@ var_dump($_POST);
             </dl>
           </div>
           <div class="form-button">
-            <button type="submit">入力内容の確認</button>
-            <button type="reset">クリア</button>
+            <button type="submit" class="green">入力内容の確認</button>
+            <button type="button" class="blue" id="reset-button">クリア</button>
           </div>
-        
         </form>
+      </section>
 
+<!--
+#===========================================================
+#  フォーム'確認画面'モード
+#=========================================================== 
+-->
+    <?php elseif($mode == 'confirm'): ?>
+
+      <section class="form-wrapper content-wrapper">
+        <section class="step-nav">
+          <ul>
+            <li class="step">情報の入力</li>
+            <li class="arrow"></li>
+            <li class="step high-light">内容のご確認</li>
+            <li class="arrow"></li>
+            <li class="step">お申し込み完了</li>
+          </ul>
+        </section>
+
+        <section class="form">
+          <div class="check-request">
+            <dl>
+              <dt class="required">希望資料</dt>
+              <dd>
+                <?php echo  $documents_text; ?>
+              </dd>
+            </dl>
+          </div>
+          <div class="input-contents">
+            <dl class="name">
+              <dt class="required">お名前</dt>
+              <dd>
+                <div class="content">
+                  <p>
+                    <?php echo $name1; ?>
+                  </p>
+                </div>
+                <div class="content">
+                  <p>
+                    <?php echo $name2; ?>
+                  </p>
+                </div>
+              </dd>
+            </dl>
+            <dl class="kana">
+              <dt class="required">フリガナ</dt>
+              <dd>
+                <div class="content">
+                  <p>
+                    <?php echo $kana1; ?>
+                  </p>
+                </div>
+                <div class="content">
+                  <p>
+                      <?php echo $kana2; ?>
+                  </p>
+                </div>
+              </dd>
+            </dl>
+            <dl class="address">
+              <dt  class="required"><span>ご住所</span></dt>
+              <dd>
+                <div class="zip">
+                  <label for="zip1">
+                    <span>郵便番号：</span>
+                  </label>
+                    <?php echo $zip1; ?>-<?php echo $zip2; ?>
+                </div>
+                <div>
+                  <div class="pref">
+                    <label>
+                      <span>都道府県：</span>
+                      <?php echo $pref; ?>
+                    </label>
+                  </div>
+                  <div class="addr1">
+                    <label>
+                      <span>市区町村番地：</span>
+                      <?php echo $addr1; ?>
+                    </label>
+                  </div>
+                  <div class="addr2">
+                    <label>
+                      <?php if($addr2): ?>
+                      <span>マンション／アパート名：</span>
+                      <?php echo $addr2; endif; ?>
+                    </label>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="phone">
+              <dt class="required">お電話番号</dt>
+              <dd>
+                <?php echo $phone; ?>
+              </dd>
+            </dl>
+            <dl class="mail">
+              <dt class="required">メールアドレス</dt>
+              <dd>
+                <div>
+                  <p> 
+                    <?php echo $mail1; ?>
+                  </p>
+                </div>
+              </dd>
+            </dl>
+            <?php if($gender): ?>
+              <dl class="gender">
+                <dt>性別</dt>
+                <dd>
+                  <p>
+                    <?php echo $gender; ?>
+                  </p>
+                </dd>
+              </dl>
+            <?php endif; ?>
+              <dl class="grade">
+                <dt class="required">学年</dt>
+                <dd>
+                  <?php echo $grade2; ?>
+                </dd>
+              </dl>
+            <?php if($school_name): ?>
+              <dl class="school-name">
+                <dt><span>高校名</span></dt>
+                <dd><?php echo $school_name; ?></dd>
+              </dl>
+            <?php endif; ?>
+          </section> 
+
+          <div class="form-button">
+            <form action="<?php echo $index; ?>" method="POST">
+              <input type="hidden" name="mode" value="submit">
+              <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+
+              <?php 
+              foreach( $documents as $key => $value) {
+                printf( '<input type="hidden" name="documents[%s]" value="%s">', $key, $value );
+              }
+              ?>
+                
+              <input type="hidden" name="name1" value="<?php echo $name1; ?>">
+              <input type="hidden" name="name2" value="<?php echo $name2; ?>">
+              <input type="hidden" name="kana1" value="<?php echo $kana1; ?>">
+              <input type="hidden" name="kana2" value="<?php echo $kana2; ?>">
+              <input type="hidden" name="zip1" value="<?php echo $zip1; ?>">
+              <input type="hidden" name="zip2" value="<?php echo $zip2; ?>">
+              <input type="hidden" name="pref" value="<?php echo $pref; ?>">
+              <input type="hidden" name="addr1" value="<?php echo $addr1; ?>">
+              <input type="hidden" name="addr2" value="<?php echo $addr2; ?>">
+              <input type="hidden" name="phone" value="<?php echo $phone; ?>">
+              <input type="hidden" name="mail1" value="<?php echo $mail1; ?>">
+              <input type="hidden" name="mail2" value="<?php echo $mail2; ?>">
+              <input type="hidden" name="gender" value="<?php echo $gender; ?>">
+              <input type="hidden" name="grade1" value="<?php echo $grade1; ?>">
+              <input type="hidden" name="school-name" value="<?php echo $school_name; ?>">
+
+
+
+              <button type="submit" class="red">送信</button>
+            </form>
+
+            <form action="<?php echo $index; ?>" method="POST">
+              <input type="hidden" name="mode" value="input">
+              <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+
+              <?php 
+              foreach( $documents as $key => $value) {
+                printf( '<input type="hidden" name="documents[%s]" value="%s">', $key, $value );
+              }
+              ?>
+                
+              <input type="hidden" name="name1" value="<?php echo $name1; ?>">
+              <input type="hidden" name="name2" value="<?php echo $name2; ?>">
+              <input type="hidden" name="kana1" value="<?php echo $kana1; ?>">
+              <input type="hidden" name="kana2" value="<?php echo $kana2; ?>">
+              <input type="hidden" name="zip1" value="<?php echo $zip1; ?>">
+              <input type="hidden" name="zip2" value="<?php echo $zip2; ?>">
+              <input type="hidden" name="pref" value="<?php echo $pref; ?>">
+              <input type="hidden" name="addr1" value="<?php echo $addr1; ?>">
+              <input type="hidden" name="addr2" value="<?php echo $addr2; ?>">
+              <input type="hidden" name="phone" value="<?php echo $phone; ?>">
+              <input type="hidden" name="mail1" value="<?php echo $mail1; ?>">
+              <input type="hidden" name="mail2" value="<?php echo $mail2; ?>">
+              <input type="hidden" name="gender" value="<?php echo $gender; ?>">
+              <input type="hidden" name="grade1" value="<?php echo $grade1; ?>">
+              <input type="hidden" name="school-name" value="<?php echo $school_name; ?>">
+
+              <button type="submit" class="blue">戻る</button>
+            </form>
+          </div>
+
+      </section>
     <?php endif; ?>
-
-    </section>
   </main>
   <footer>
     <div class="request-footer">
@@ -633,5 +838,8 @@ var_dump($_POST);
 
   <!-- 郵便番号から住所検索機能 -->
   <script src="../js/ajaxzip3.js"></script>
+
+  <!-- 入力情報のリセット(クリア)ボタン -->
+  <script src="../js/formReset.js"></script>
 </body>
 </html>
