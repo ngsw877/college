@@ -2683,29 +2683,57 @@ width: 150px;
   color: #fff;
   margin: 30px 15px;
   cursor: pointer;
+  border-radius: 50px;
   transition: 0.3s ease all;
 }
 
-.form-button button[type="submit"] {
+.form-button button.green {
   background-color: #009F8C;
   border: 1px solid #009F8C;
 }
 
-.form-button button[type="reset"] {
+.form-button button.blue {
   background-color: #0086AB;
   border: 1px solid #0086AB;
 }
 
-.form-button button[type="submit"]:hover {
-  background-color: transparent;
-  color: #009F8C;
-  transition: .3s ease all;
+.form-button button.red {
+  background-color: #C7243A;
+  border: 1px solid #C7243A;
 }
 
-.form-button button:hover {
+.form-button button.green:hover {
+  background-color: transparent;
+  color: #009F8C;
+  transition: 0.3s ease all;
+}
+
+.form-button button.blue:hover {
   background-color: transparent;
   color: #0086AB;
-  transition: .3s ease all;
+  transition: 0.3s ease all;
+}
+
+.form-button button.red:hover {
+  background-color: transparent;
+  color: #C7243A;
+  transition: 0.3s ease all;
+}
+
+.form-button .to-top-page {
+  margin: auto;
+}
+
+.form-button .to-top-page:hover {
+  opacity: 1;
+}
+
+.thanks {
+  height: 100px;
+}
+
+.thanks p {
+  font-size: 1.2rem;
 }
 
 .form .check-request {
