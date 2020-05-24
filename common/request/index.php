@@ -48,7 +48,7 @@ $grade2 = ''; // value値を、日本語に変換した値を格納
 $school_name = $_POST['school-name'];
 
 # 選択された希望資料を配列として受け取り
-$documents[] = '';
+$documents = [];
 $documents_text = '';
 if(!empty($_POST['documents']) && is_array($_POST['documents'])) {
   $documents = $_POST['documents'];
