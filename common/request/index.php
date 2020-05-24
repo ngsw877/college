@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors',1); 
+// ini_set('display_errors',1); 
 
 
 $mode = !empty($_POST['mode']) ? $_POST['mode'] : '';
@@ -256,13 +256,6 @@ if($mode) {
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
-
-<?php  
-var_dump($_POST); 
-
-
-?>
-
 
   <header>
     <div class="request-header">

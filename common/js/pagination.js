@@ -39,8 +39,8 @@ $(function(){
     
     // ボタンをクリックすると記事一覧の上部にスクロールして戻る
     if(firstClick === true) {
-      var pos = $(".cl-inner").offset().top - $("header").innerHeight();
-      $("html, body").animate({scrollTop: pos}, 300, "swing");
+      var pos = $(".campus-life").offset().top - $(".sticky-header").innerHeight();
+      $("html, body").animate({scrollTop: pos}, 500, "swing");
     }
     
     firstClick = true;
