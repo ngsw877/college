@@ -132,7 +132,7 @@ if($mode) {
 
     if(empty($phone)) {
       $error_phone = '電話番号が未入力です';
-    } else if(!preg_match("/^(0{1}[0-9]{9,10})$/", $phone)) {
+    } else if(!preg_match("/^(0{1}\d{9,10})$/", $phone) && !preg_match("/^(0{1}\d{1,4}-\d{1,4}-\d{1,4})$/", $phone)) {
       $error_phone = '電話番号を正しく入力してください';
     }
 
