@@ -921,10 +921,33 @@ background-color: #009F8C;
 .news .news-content th {
   padding: 20px 2em 20px 0;
   border-bottom: 1px dotted;
+  width: 30%;
 }
 
 .news .news-content td {
   border-bottom: 1px dotted;
+}
+
+.news .news-content th span {
+  display: inline-block;
+  background-color: red;
+  color: #ffffff;
+  margin-left: 20px;
+  width: 90px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.news .news-content th .info {
+  background-color: #009F8C;
+}
+
+.news .news-content th .admission {
+  background-color: #0086AB;
+}
+
+.news .news-content th .event {
+  background-color: #F6CA06;
 }
 
 .news .news-content tr:last-of-type th,
@@ -956,28 +979,15 @@ background-color: #009F8C;
     padding: 50px 5vw;
   }
 
-  /* .news .content-wrapper {
-    display: block;
-  } */
-
-  /* .news .news-heading {
-    width: 100%;
-  } */
-
   .news .news-heading h2 {
     text-align: center;
     margin-bottom: 2vw;
   }
-
-  /* .news .news-content {
-    width: 100%;
-  } */
 }
 
 @media screen and (max-width: 767px) {
   .news {
     padding: 50px 0;
-    /* width: 90%; */
     margin: 0 auto;
   }
 
@@ -1011,6 +1021,8 @@ background-color: #009F8C;
   .news .news-content td {
     display: block;
     width: 100%;
+    margin-top: 30px;
+    padding-bottom: 15px;
   }
 }
 
