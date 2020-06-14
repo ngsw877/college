@@ -22,9 +22,9 @@ function changeFont(fsize, bsize) {
   obj.style.fontSize = fsize;
 
   // 大中小ボタンのサイズを変更
-  var boxes = document.querySelectorAll('.font-box');
-  for(var i = 0; i < boxes.length; i++) {
-    boxes[i].style.width = bsize;
-    boxes[i].style.height = bsize;
-  }
+  // var boxes = document.querySelectorAll('.font-box');
+  // for(var i = 0; i < boxes.length; i++) {
+  //   boxes[i].style.width = bsize;
+  //   boxes[i].style.height = bsize;
+  // }
 }
