@@ -368,7 +368,7 @@ a:hover {
   height: 100%;
   display: block;
   padding: 10px 0;
-  font-size: 18px;
+  font-size: 1.1rem;
 }
 
 .header-top-right .header-sub-nav .li-material a {
@@ -405,7 +405,7 @@ background-color: #009F8C;
   height: 100%;
   display: block;
   padding: 17px 0;
-  font-size: 18px;
+  font-size: 1.1rem;
 }
 
  .header-main-nav ul li a:hover {
