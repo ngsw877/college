@@ -1338,8 +1338,8 @@ background-color: #009F8C;
 
 .footer .footer-high li a {
   color: #fff;
+  font-size: 1.1rem;
   width: 100%;
-  /* padding: 0 25px; */
   margin: 0 25px;
   border-bottom: #009F8C;
   transition: all .6s ease;
