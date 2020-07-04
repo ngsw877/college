@@ -627,38 +627,47 @@ background-color: #009F8C;
   top: 50%;
   left: 5%;
   transform: translateY(-50%);
-  /* transform: translateX(-30%); */
   z-index: 1;
-  font-size: 3rem;
+  font-size: 48px;
   color: #ffffff;
   border: 2px solid #ffffff;
 }
 
 @media screen and (max-width: 1000px) {
   .main-visual h2 {
-    font-size: 2rem;
+    font-size: 35px;
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 676px) {
   .main-visual h2 {
-    font-size: 1.2rem;
+    font-size: 27px;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width:415px) {
   .main-visual h2 {
-    font-size: 1.1rem;
+    font-size: 18px;
   }
 }
 
 /* ======================== mainvisualここまで ======================= */
 
+@media screen and (max-width: 415px) {
+  .undergraduate-top-page h2,
+  .pickup h2,
+  .news .news-heading h2,
+  .access h2 {
+    font-size: 1.7rem;
+  }
+}
+
+
 /* ======================== undergraduateここから ======================= */
 
 .undergraduate-top-page {
   margin-bottom: 50px;
-  background-color:#eafff49c;
+  background-color:#eafff46b;
   padding: 50px 0;
 }
 .undergraduate-top-page  h2 {
@@ -694,14 +703,22 @@ background-color: #009F8C;
   position: relative;
   margin-bottom: 80px;
   background-color: #fff;
-  box-shadow: 0 7px 20px 1px rgba(77,18,12,.2);
+  box-shadow: 0 7px 20px 1px rgba(77,18,12,0.2);
+  transition: all 0.6s ease;
   border-radius: 8px;
+}
 
+.undergraduate-top-page ul li:hover {
+  box-shadow: 0 7px 20px 1px rgba(0, 159, 140, 1);
 }
 
 .undergraduate-top-page ul li a {
   display: block;
   padding: 5% 0;
+}
+
+.undergraduate-top-page ul li a:hover {
+  opacity: 1;
 }
 
 .undergraduate-top-page ul li figure img {
@@ -710,18 +727,27 @@ background-color: #009F8C;
 }
 
 .undergraduate-top-page ul li .up-tp-read {
-  margin: 20px 0;
+  margin: 20px 0 100px;
   padding: 0 10%;
-  max-height: 200px;
   color: #555;
+  font-size: 1.1rem;
 }
 
 .undergraduate-top-page ul li .ug-tp-button {
   background-color: #009F8C;
   width: 250px;
-  margin: 25px auto 0;
   border-radius: 8px;
   z-index: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  transition: all 0.4s ease;
+}
+
+.undergraduate-top-page ul li .ug-tp-button:hover {
+  background-color: #F6CA06;
+  color: #ffffff;
 }
 
 .undergraduate-top-page ul li .ug-tp-button p {
@@ -754,10 +780,8 @@ background-color: #009F8C;
   margin: 30px auto;
   }
 
-  .undergraduate-top-page ul li .up-tp-read {
-    max-height: 250px;
-  }
 }
+
 
 /* ======================== undergraduateここまで ======================= */
 
