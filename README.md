@@ -63,7 +63,7 @@ URL：　http://ngsw-portfolio.site/
     * VPC
     * EIP
     * Route53
-    * CodeDeploy
+    * CodeDeploy / CodePipeline
 
 * 開発環境
   * Github
